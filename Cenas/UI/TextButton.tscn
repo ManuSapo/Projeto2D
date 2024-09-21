@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://b72re4dhnon65"]
+
+[ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="1_xiiob"]
+[ext_resource type="FontFile" uid="uid://qn0iv0rp48br" path="res://Assets Visuais/Fonts/monogram.ttf" id="2_k3ryc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i301"]
+atlas = ExtResource("1_xiiob")
+region = Rect2(113, 113, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4qla"]
+texture = SubResource("AtlasTexture_3i301")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c3x4"]
+atlas = ExtResource("1_xiiob")
+region = Rect2(113, 81, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu0o8"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = SubResource("AtlasTexture_6c3x4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irqt4"]
+atlas = ExtResource("1_xiiob")
+region = Rect2(113, 98, 30, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xt6bs"]
+texture = SubResource("AtlasTexture_irqt4")
+
+[sub_resource type="Theme" id="Theme_s4c8e"]
+default_font = ExtResource("2_k3ryc")
+Button/styles/hover = SubResource("StyleBoxTexture_c4qla")
+Button/styles/normal = SubResource("StyleBoxTexture_fu0o8")
+Button/styles/pressed = SubResource("StyleBoxTexture_xt6bs")
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(41, 25)
+offset_right = 37.0
+offset_bottom = 25.0
+theme = SubResource("Theme_s4c8e")
+text = "Test"

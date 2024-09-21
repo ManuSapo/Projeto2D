@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SkillsPlayer" load_steps=8 format=3 uid="uid://6isatp3f8kcj"]
+
+[ext_resource type="Script" path="res://Scripts/SkillsPlayer.gd" id="1_fhp72"]
+[ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="2_pcsai"]
+[ext_resource type="Resource" uid="uid://ehx10mpb8auk" path="res://Skills Resources/Skills/Shoot.tres" id="3_jyikd"]
+[ext_resource type="Texture2D" uid="uid://cilndxs1tnkgq" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_22.png" id="4_v6qbn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn85t"]
+atlas = ExtResource("4_v6qbn")
+
+[sub_resource type="Resource" id="Resource_tuc0c"]
+script = ExtResource("2_pcsai")
+Damage = 2
+Name = "Damage"
+ManaCost = 0
+Turns = 0
+Description = "It Damages the enemy"
+icon = SubResource("AtlasTexture_pn85t")
+
+[sub_resource type="Resource" id="Resource_y1bgp"]
+script = ExtResource("2_pcsai")
+Damage = 0
+Name = ""
+ManaCost = 0
+Turns = 0
+Description = ""
+
+[resource]
+script = ExtResource("1_fhp72")
+skills = Array[ExtResource("2_pcsai")]([ExtResource("3_jyikd"), SubResource("Resource_tuc0c"), SubResource("Resource_y1bgp"), null, null, null, null, null, null, null])

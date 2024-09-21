@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://u3vtitvp5g4d"]
+
+[ext_resource type="Script" path="res://Cenas/UI/FightScene.gd" id="1_rog8c"]
+[ext_resource type="PackedScene" uid="uid://chvp1l818h8xa" path="res://Cenas/Enemy/flying_demon.tscn" id="2_x4up3"]
+[ext_resource type="PackedScene" uid="uid://btguhg0x5xppn" path="res://Cenas/Enemy/Mushroom.tscn" id="3_8nry5"]
+
+[node name="Control" type="Control"]
+modulate = Color(1, 1, 1, 0.0431373)
+self_modulate = Color(1, 1, 1, 0.0392157)
+layout_mode = 3
+anchor_top = 0.005
+anchor_right = 0.833
+anchor_bottom = 0.704
+offset_left = -84.0
+offset_top = -83.24
+offset_right = -755.616
+offset_bottom = -376.192
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rog8c")
+enemys = Array[PackedScene]([ExtResource("2_x4up3"), ExtResource("3_8nry5"), null, null, null, null, null, null, null, null])
+
+[node name="StartTurn" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="StartTurn"]
+follow_viewport_enabled = true
+
+[node name="MiddleTurn" type="Node2D" parent="."]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MiddleTurn"]
+follow_viewport_enabled = true
+
+[node name="EndTurn" type="Node2D" parent="."]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="EndTurn"]
+follow_viewport_enabled = true
+
+[node name="Reward" type="Node2D" parent="."]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Reward"]
+follow_viewport_enabled = true

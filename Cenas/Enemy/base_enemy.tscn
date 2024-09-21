@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1ju3as1tyavr"]
+
+[ext_resource type="Script" path="res://Cenas/Enemy/EnemyMovement.gd" id="1_ux74i"]
+[ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="2_rftos"]
+[ext_resource type="Script" path="res://EHealthBar.gd" id="3_a31gp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xckkb"]
+atlas = ExtResource("2_rftos")
+region = Rect2(135, 20, 52, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agd7e"]
+atlas = ExtResource("2_rftos")
+region = Rect2(72, 22, 49, 3)
+margin = Rect2(0, 0, 2, 3)
+
+[node name="BaseEnemy" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ux74i")
+speed = 20.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+debug_color = Color(0.927163, 0.143775, 0.567313, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = -38.0
+offset_right = 118.0
+offset_bottom = -20.0
+grow_vertical = 2
+rotation = 3.14159
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ELifeBar" type="TextureProgressBar" parent="VBoxContainer" node_paths=PackedStringArray("enemy")]
+custom_minimum_size = Vector2(78, 7)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+value = 50.0
+rounded = true
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 2
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = SubResource("AtlasTexture_xckkb")
+texture_progress = SubResource("AtlasTexture_agd7e")
+texture_progress_offset = Vector2(1.22, 2)
+script = ExtResource("3_a31gp")
+enemy = NodePath("../..")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

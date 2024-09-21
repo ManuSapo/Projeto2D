@@ -1,0 +1,167 @@
+[gd_scene load_steps=24 format=3 uid="uid://btguhg0x5xppn"]
+
+[ext_resource type="Script" path="res://Cenas/Enemy/EnemyMovement.gd" id="1_tuhcq"]
+[ext_resource type="Texture2D" uid="uid://cpvhq8ecviviu" path="res://Assets Visuais/Personagem/Mushroom/Mushroom without VFX/Mushroom-Idle.png" id="2_32hyl"]
+[ext_resource type="Script" path="res://Scripts/StatusEnemy.gd" id="2_gkcgp"]
+[ext_resource type="Script" path="res://Scripts/SkillsEnemy.gd" id="3_bodbj"]
+[ext_resource type="Texture2D" uid="uid://x36c4qsp6dt3" path="res://Assets Visuais/UI/power icons/Buffs/lucky_boost.png" id="4_l3qgw"]
+[ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="5_umo88"]
+[ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="7_wo87s"]
+[ext_resource type="Script" path="res://EHealthBar.gd" id="8_uihjh"]
+
+[sub_resource type="Resource" id="Resource_e7nhb"]
+script = ExtResource("2_gkcgp")
+enemyType = "Plant"
+health = 100
+max_health = 100
+mana = 50
+max_mana = 50
+attack = 10
+defense = 5
+speed = 10
+
+[sub_resource type="Resource" id="Resource_pdssf"]
+script = ExtResource("5_umo88")
+Damage = 3
+Name = "Leaf"
+ManaCost = 0
+Turns = 0
+Description = "A basic punch"
+icon = ExtResource("4_l3qgw")
+
+[sub_resource type="Resource" id="Resource_sqx4x"]
+script = ExtResource("3_bodbj")
+skills = Array[ExtResource("5_umo88")]([SubResource("Resource_pdssf"), null, null, null, null])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3hx6"]
+atlas = ExtResource("2_32hyl")
+region = Rect2(19, 24, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yttvq"]
+atlas = ExtResource("2_32hyl")
+region = Rect2(99, 24, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogwuw"]
+atlas = ExtResource("2_32hyl")
+region = Rect2(179, 24, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfpfu"]
+atlas = ExtResource("2_32hyl")
+region = Rect2(259, 24, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hghv6"]
+atlas = ExtResource("2_32hyl")
+region = Rect2(339, 24, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5yqv"]
+atlas = ExtResource("2_32hyl")
+region = Rect2(419, 24, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fdxg"]
+atlas = ExtResource("2_32hyl")
+region = Rect2(499, 24, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_leeuc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3hx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yttvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogwuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfpfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hghv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5yqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fdxg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_icjoj"]
+radius = 18.0
+height = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epeie"]
+radius = 31.257
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e2cc"]
+atlas = ExtResource("7_wo87s")
+region = Rect2(135, 20, 52, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptt8g"]
+atlas = ExtResource("7_wo87s")
+region = Rect2(72, 22, 49, 3)
+margin = Rect2(0, 0, 2, 3)
+
+[node name="Mushroom" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_tuhcq")
+status = SubResource("Resource_e7nhb")
+skills = SubResource("Resource_sqx4x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_leeuc")
+frame_progress = 0.0250767
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+shape = SubResource("CapsuleShape2D_icjoj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_epeie")
+debug_color = Color(0.927163, 0.143775, 0.567313, 0.42)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = -16.0
+offset_right = 109.0
+offset_bottom = -9.0
+grow_vertical = 2
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ELifeBar" type="TextureProgressBar" parent="VBoxContainer" node_paths=PackedStringArray("enemy")]
+custom_minimum_size = Vector2(78, 7)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+value = 100.0
+rounded = true
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 2
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = SubResource("AtlasTexture_2e2cc")
+texture_progress = SubResource("AtlasTexture_ptt8g")
+texture_progress_offset = Vector2(1.22, 2)
+script = ExtResource("8_uihjh")
+enemy = NodePath("../..")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciynlhm6e8ch0"]
+
+[ext_resource type="Script" path="res://Scripts/StatusEnemy.gd" id="1_6xnyi"]
+[ext_resource type="Script" path="res://Scripts/StatusPlayer.gd" id="2_rr876"]
+[ext_resource type="Script" path="res://Scripts/SkillsPlayer.gd" id="3_yt3ua"]
+
+[node name="Status" type="Node2D"]
+script = ExtResource("1_6xnyi")
+
+[node name="anotherstatus" type="Node2D" parent="."]
+script = ExtResource("2_rr876")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_yt3ua")

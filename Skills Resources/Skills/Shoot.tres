@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=4 format=3 uid="uid://ehx10mpb8auk"]
+
+[ext_resource type="Texture2D" uid="uid://br3sr2mjb6ikv" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_30.png" id="1_4ooai"]
+[ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="2_mp287"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3errk"]
+atlas = ExtResource("1_4ooai")
+region = Rect2(13, 6, 6, 20)
+
+[resource]
+script = ExtResource("2_mp287")
+Damage = 10
+Name = "Shoot"
+ManaCost = 0
+Turns = 0
+Description = "Shoots one single bullet"
+icon = SubResource("AtlasTexture_3errk")
