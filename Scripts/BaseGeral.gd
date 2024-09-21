@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player = $Personagem
-@export var enemys: Array[PackedScene] = []
+@onready var enemys = $Enemies
 
 func _ready():
 	pass
@@ -13,8 +13,8 @@ func _process(delta):
 
 
 func _on_personagem_stop_everything() -> void:
-	get_tree().paused = true
+	pass
 
 
 func _on_personagem_move_everything() -> void:
-	get_tree().paused = true
+	pass

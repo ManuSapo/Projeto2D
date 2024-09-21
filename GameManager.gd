@@ -1,10 +1,10 @@
 extends Node
 
 @onready var player = get_node("/root/Geral/Personagem")
-@onready var enemies: Array[PackedScene] = []
+@onready var enemies = get_node("/root/Geral/Enemies")
 @export var isFighting: bool = false
 var EName: String
-var actualEnemy
+signal canEnd
 
 func _ready():
 	pass
@@ -20,11 +20,15 @@ func _whenFighting():
 func Enemy(enemy):
 	if enemy is CharacterBody2D:
 		if enemy.canMove:
-			enemy.canMove = false
-			print(enemy.canMove)
+			moveController()
 			enemy.position = player.position + Vector2(100,10)
-			actualEnemy = enemy
-		else:
-			enemy.canMove = true
-			print(enemy.canMove)
-			actualEnemy = null
+			isFighting = true
+			await canEnd
+			moveController()
+			isFighting = false
+			return
+
+func moveController():
+		var enemysOnScene = enemies.get_children()
+		for child in enemysOnScene:
+			child.changeMove()
