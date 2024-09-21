@@ -55,6 +55,7 @@ func _on_itens_pressed():
 
 func _on_run_pressed():
 	personagem._enemyFight()
+	GameManager.canEnd.emit()
 
 #Fight Buttons
 

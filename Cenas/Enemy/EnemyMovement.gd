@@ -51,6 +51,18 @@ func _on_timer_timeout():
 	_fight()
 	canCollide = true
 
+func changeMove():
+	if canMove:
+		canMove = false
+		print("estado de movimento = ", canMove)
+		return
+		
+	if !canMove:
+		canMove = true
+		print("estado de movimento = ", canMove)
+		return
+
+
 
 func _enemy():
 	pass
