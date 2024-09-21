@@ -147,9 +147,7 @@ func _enemyFight():
 		canMove = true
 		return
 	
-	
-func testSilly():
-	stopEverything.emit()
+
  
 
 func _on_detection_body_entered(body):

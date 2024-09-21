@@ -666,8 +666,8 @@ shape = SubResource("CircleShape2D_qbquj")
 position = Vector2(-48, 8)
 texture = SubResource("AtlasTexture_hj15s")
 
-[connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Fight" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Itens" to="Camera2D/FightUI" method="_on_itens_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Run" to="Camera2D/FightUI" method="_on_run_pressed"]
