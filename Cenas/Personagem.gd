@@ -147,7 +147,8 @@ func _enemyFight():
 		canMove = true
 		return
 	
-
+func sillyTest():
+	pass
  
 
 func _on_detection_body_entered(body):
