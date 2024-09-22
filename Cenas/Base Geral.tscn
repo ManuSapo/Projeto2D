@@ -1161,7 +1161,7 @@ tile_set = SubResource("TileSet_hivvm")
 
 [node name="Personagem" parent="." instance=ExtResource("2_ysl6x")]
 process_mode = 3
-position = Vector2(-104, 30)
+position = Vector2(-48, -48)
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -1171,7 +1171,7 @@ scale = Vector2(0.5, 0.5)
 speed = 7.0
 
 [node name="Mushroom" parent="Enemies" instance=ExtResource("4_h1guf")]
-position = Vector2(9, -21)
+position = Vector2(258, 144)
 speed = 5.0
 status = SubResource("Resource_2isds")
 
