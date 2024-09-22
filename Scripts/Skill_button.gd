@@ -2,13 +2,20 @@ extends Button
 
 @export var skill: Skill = Skill.new()
 
+
 func _ready() -> void:
-	pass
+	set_skill()
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
-	pass
+	set_skill()
 	
 	
 func set_skill():
 	icon = skill.icon
+	if !icon:
+		hide()
+	else:
+		show()
+	return
+	

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://cfhcre4smvi0o"]
+
+[ext_resource type="Texture2D" uid="uid://bmfyg0r6jcmrs" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_24.png" id="1_m1byj"]
+[ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="2_0ieco"]
+
+[resource]
+script = ExtResource("2_0ieco")
+Damage = 5
+Name = "Gunpoint"
+ManaCost = 0
+Turns = 0
+Description = ""
+icon = ExtResource("1_m1byj")

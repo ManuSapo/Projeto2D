@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://0of2t1bcmgpj"]
+[gd_scene load_steps=82 format=3 uid="uid://0of2t1bcmgpj"]
 
 [ext_resource type="Script" path="res://Cenas/Personagem.gd" id="1_10i7r"]
 [ext_resource type="Texture2D" uid="uid://yhwurw8kq3dy" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_idle_anim_16x16.png" id="1_ns7mu"]
@@ -9,13 +9,16 @@
 [ext_resource type="Script" path="res://Cenas/HealthBar.gd" id="4_fh8hf"]
 [ext_resource type="Script" path="res://Scripts/CameraPosition.gd" id="6_lwkjg"]
 [ext_resource type="Script" path="res://Cenas/ManaBar.gd" id="6_qqbhs"]
-[ext_resource type="Script" path="res://Cenas/skills_buttons.gd" id="10_aib6f"]
 [ext_resource type="Texture2D" uid="uid://tkvcwp1hpwss" path="res://Assets Visuais/UI/Bars and Buttons.png" id="10_ltrwd"]
 [ext_resource type="Script" path="res://Scripts/FightUI.gd" id="10_reqpf"]
 [ext_resource type="PackedScene" uid="uid://b72re4dhnon65" path="res://Cenas/UI/TextButton.tscn" id="11_phosy"]
 [ext_resource type="PackedScene" uid="uid://bedy4ekkqekwe" path="res://Cenas/UI/SkillButton.tscn" id="12_2aa3t"]
 [ext_resource type="Texture2D" uid="uid://bi8pnctfha41p" path="res://Assets Visuais/Personagem/Modern Tiles/Adam_phone_16x16.png" id="12_q1whl"]
 [ext_resource type="Resource" uid="uid://d3msq04d8g6h6" path="res://Skills Resources/Shoot.tres" id="13_fb66u"]
+[ext_resource type="Resource" uid="uid://cfhcre4smvi0o" path="res://Skills Resources/Skills/GunPoint.tres" id="14_r8i4x"]
+[ext_resource type="Texture2D" uid="uid://bwc6i56fulf1" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_11.png" id="15_w0w1i"]
+[ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="16_0jkny"]
+[ext_resource type="Texture2D" uid="uid://ghvf487rfrrs" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_05.png" id="16_bvk5q"]
 
 [sub_resource type="Resource" id="Resource_i4tir"]
 script = ExtResource("2_gjy6x")
@@ -54,6 +57,24 @@ texture = SubResource("AtlasTexture_761je")
 
 [sub_resource type="Theme" id="Theme_k5dg8"]
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_64g6k")
+
+[sub_resource type="Resource" id="Resource_edgoi"]
+script = ExtResource("16_0jkny")
+Damage = 5
+Name = "Heal"
+ManaCost = 0
+Turns = 0
+Description = ""
+icon = ExtResource("15_w0w1i")
+
+[sub_resource type="Resource" id="Resource_0m0hc"]
+script = ExtResource("16_0jkny")
+Damage = 0
+Name = "asasa"
+ManaCost = 0
+Turns = 0
+Description = ""
+icon = ExtResource("16_bvk5q")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmwiw"]
 atlas = ExtResource("1_ns7mu")
@@ -618,23 +639,26 @@ follow_focus = true
 [node name="SkillsButtons" type="VBoxContainer" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer"]
 custom_minimum_size = Vector2(32, 104)
 layout_mode = 2
-script = ExtResource("10_aib6f")
-charSkills = ExtResource("3_daho1")
 
 [node name="Skill1" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
+visible = false
 layout_mode = 2
 skill = ExtResource("13_fb66u")
 
 [node name="Skill2" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
+visible = false
 layout_mode = 2
+skill = ExtResource("14_r8i4x")
 
 [node name="Skill3" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
 visible = false
 layout_mode = 2
+skill = SubResource("Resource_edgoi")
 
 [node name="Skill4" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
 visible = false
 layout_mode = 2
+skill = SubResource("Resource_0m0hc")
 
 [node name="Skill5" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
 visible = false
