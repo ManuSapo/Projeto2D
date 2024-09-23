@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://0of2t1bcmgpj"]
+[gd_scene load_steps=85 format=3 uid="uid://0of2t1bcmgpj"]
 
 [ext_resource type="Script" path="res://Cenas/Personagem.gd" id="1_10i7r"]
 [ext_resource type="Texture2D" uid="uid://yhwurw8kq3dy" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_idle_anim_16x16.png" id="1_ns7mu"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Cenas/HealthBar.gd" id="4_fh8hf"]
 [ext_resource type="Script" path="res://Scripts/CameraPosition.gd" id="6_lwkjg"]
 [ext_resource type="Script" path="res://Cenas/ManaBar.gd" id="6_qqbhs"]
-[ext_resource type="Texture2D" uid="uid://tkvcwp1hpwss" path="res://Assets Visuais/UI/Bars and Buttons.png" id="10_ltrwd"]
+[ext_resource type="Texture2D" uid="uid://c5uibcdkxipw6" path="res://Assets Visuais/UI/Steampunk UI.png" id="10_3i0a2"]
 [ext_resource type="Script" path="res://Scripts/FightUI.gd" id="10_reqpf"]
 [ext_resource type="PackedScene" uid="uid://b72re4dhnon65" path="res://Cenas/UI/TextButton.tscn" id="11_phosy"]
 [ext_resource type="PackedScene" uid="uid://bedy4ekkqekwe" path="res://Cenas/UI/SkillButton.tscn" id="12_2aa3t"]
@@ -48,15 +48,32 @@ atlas = ExtResource("4_10nln")
 region = Rect2(8, 6, 42, 3)
 margin = Rect2(0, -1, 2, 3)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_761je"]
-atlas = ExtResource("10_ltrwd")
-region = Rect2(116, 56, 9, 5)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2fhj"]
+atlas = ExtResource("10_3i0a2")
+region = Rect2(0, 0, 7, 12)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_64g6k"]
-texture = SubResource("AtlasTexture_761je")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pq7fq"]
+texture = SubResource("AtlasTexture_h2fhj")
+modulate_color = Color(0.324591, 0.672877, 0.9924, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwoyn"]
+atlas = ExtResource("10_3i0a2")
+region = Rect2(9, 0, 3, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3qsx"]
+texture = SubResource("AtlasTexture_xwoyn")
+texture_margin_left = 2.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
+modulate_color = Color(0.698039, 0.482353, 0.639216, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2k0m"]
 
 [sub_resource type="Theme" id="Theme_k5dg8"]
-VScrollBar/styles/grabber = SubResource("StyleBoxTexture_64g6k")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_pq7fq")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_h3qsx")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_r2k0m")
 
 [sub_resource type="Resource" id="Resource_edgoi"]
 script = ExtResource("16_0jkny")
@@ -629,24 +646,23 @@ layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Camera2D/FightUI/Layout UI/FightButtons"]
 layout_mode = 0
-offset_left = -133.0
-offset_top = 48.0
-offset_right = -90.0
-offset_bottom = 116.0
+offset_left = -132.0
+offset_top = 61.0
+offset_right = -94.0
+offset_bottom = 96.0
 theme = SubResource("Theme_k5dg8")
 follow_focus = true
 
 [node name="SkillsButtons" type="VBoxContainer" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer"]
-custom_minimum_size = Vector2(32, 104)
+custom_minimum_size = Vector2(24, 104)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Skill1" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
-visible = false
 layout_mode = 2
 skill = ExtResource("13_fb66u")
 
 [node name="Skill2" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
-visible = false
 layout_mode = 2
 skill = ExtResource("14_r8i4x")
 

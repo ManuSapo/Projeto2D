@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b72re4dhnon65"]
+[gd_scene load_steps=11 format=3 uid="uid://b72re4dhnon65"]
 
 [ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="1_xiiob"]
 [ext_resource type="FontFile" uid="uid://qn0iv0rp48br" path="res://Assets Visuais/Fonts/monogram.ttf" id="2_k3ryc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gpe5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3i301"]
 atlas = ExtResource("1_xiiob")
@@ -29,6 +31,7 @@ texture = SubResource("AtlasTexture_irqt4")
 
 [sub_resource type="Theme" id="Theme_s4c8e"]
 default_font = ExtResource("2_k3ryc")
+Button/styles/focus = SubResource("StyleBoxEmpty_gpe5o")
 Button/styles/hover = SubResource("StyleBoxTexture_c4qla")
 Button/styles/normal = SubResource("StyleBoxTexture_fu0o8")
 Button/styles/pressed = SubResource("StyleBoxTexture_xt6bs")

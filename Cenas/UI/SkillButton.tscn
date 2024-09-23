@@ -1,8 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bedy4ekkqekwe"]
+[gd_scene load_steps=12 format=3 uid="uid://bedy4ekkqekwe"]
 
 [ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="1_auika"]
 [ext_resource type="Texture2D" uid="uid://b7m0a6elqjngg" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_10.png" id="2_x1n48"]
 [ext_resource type="Script" path="res://Scripts/Skill_button.gd" id="3_6sjnx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8m1y0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aito"]
+atlas = ExtResource("1_auika")
+region = Rect2(2, 34, 44, 44)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j853c"]
+texture = SubResource("AtlasTexture_7aito")
+modulate_color = Color(0.517647, 0.764706, 0.768627, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2kqkv"]
 atlas = ExtResource("1_auika")
@@ -11,14 +21,26 @@ region = Rect2(2, 34, 44, 44)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7x2oy"]
 texture = SubResource("AtlasTexture_2kqkv")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbihn"]
+atlas = ExtResource("1_auika")
+region = Rect2(2, 34, 44, 44)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qi8vk"]
+texture = SubResource("AtlasTexture_nbihn")
+modulate_color = Color(0.54902, 0.243137, 0.913725, 1)
+
 [sub_resource type="Theme" id="Theme_33rdu"]
+Button/styles/focus = SubResource("StyleBoxEmpty_8m1y0")
+Button/styles/hover = SubResource("StyleBoxTexture_j853c")
 Button/styles/normal = SubResource("StyleBoxTexture_7x2oy")
+Button/styles/pressed = SubResource("StyleBoxTexture_qi8vk")
 
 [node name="Button" type="Button"]
-custom_minimum_size = Vector2(8, 8)
+custom_minimum_size = Vector2(32, 32)
 offset_right = 32.0
 offset_bottom = 32.0
 theme = SubResource("Theme_33rdu")
+button_mask = 0
 icon = ExtResource("2_x1n48")
 icon_alignment = 1
 script = ExtResource("3_6sjnx")
