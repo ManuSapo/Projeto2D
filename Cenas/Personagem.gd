@@ -26,7 +26,7 @@ signal enemyContact(collider_scene)
 signal fightCalled
 signal stopEverything
 signal moveEverything
-
+signal SkillUsed
 
 
 func _ready():

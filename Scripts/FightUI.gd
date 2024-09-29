@@ -63,15 +63,3 @@ func _on_back_pressed() -> void:
 	fightButton.show()
 	backButton.hide()
 	fightButtons.hide()
-
-#Skills Buttons
-
-func _on_skill_1_pressed():
-	pass # Replace with function body.
-
-func _on_skill_2_pressed():
-	pass # Replace with function body.
-
-
-func _on_skill_3_pressed():
-	pass # Replace with function body.

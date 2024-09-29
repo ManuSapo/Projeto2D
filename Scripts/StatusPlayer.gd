@@ -43,4 +43,3 @@ func regenMana(amount: int):
 	mana += amount
 	if mana > max_mana:
 		mana = max_mana
-

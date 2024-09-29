@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://0of2t1bcmgpj"]
+[gd_scene load_steps=86 format=3 uid="uid://0of2t1bcmgpj"]
 
 [ext_resource type="Script" path="res://Cenas/Personagem.gd" id="1_10i7r"]
 [ext_resource type="Texture2D" uid="uid://yhwurw8kq3dy" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_idle_anim_16x16.png" id="1_ns7mu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bwc6i56fulf1" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_11.png" id="15_w0w1i"]
 [ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="16_0jkny"]
 [ext_resource type="Texture2D" uid="uid://ghvf487rfrrs" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_05.png" id="16_bvk5q"]
+[ext_resource type="PackedScene" uid="uid://u3vtitvp5g4d" path="res://Cenas/UI/Fight.tscn" id="21_adydj"]
 
 [sub_resource type="Resource" id="Resource_i4tir"]
 script = ExtResource("2_gjy6x")
@@ -87,7 +88,7 @@ icon = ExtResource("15_w0w1i")
 [sub_resource type="Resource" id="Resource_0m0hc"]
 script = ExtResource("16_0jkny")
 Damage = 0
-Name = "asasa"
+Name = "Charge Something"
 ManaCost = 0
 Turns = 0
 Description = ""
@@ -488,7 +489,7 @@ status = SubResource("Resource_i4tir")
 skills = ExtResource("3_daho1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
 script = ExtResource("6_lwkjg")
 
@@ -647,8 +648,8 @@ layout_mode = 2
 [node name="ScrollContainer" type="ScrollContainer" parent="Camera2D/FightUI/Layout UI/FightButtons"]
 layout_mode = 0
 offset_left = -132.0
-offset_top = 61.0
-offset_right = -94.0
+offset_top = -4.0
+offset_right = -96.0
 offset_bottom = 96.0
 theme = SubResource("Theme_k5dg8")
 follow_focus = true
@@ -684,6 +685,15 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
+[node name="Skill7" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
+layout_mode = 2
+
+[node name="Skill8" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
+layout_mode = 2
+
+[node name="Skill9" parent="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
+layout_mode = 2
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_atal7")
@@ -707,15 +717,20 @@ visible = false
 position = Vector2(-48, 8)
 texture = SubResource("AtlasTexture_hj15s")
 
-[connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
+[node name="Fight" parent="." instance=ExtResource("21_adydj")]
+
 [connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Fight" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Itens" to="Camera2D/FightUI" method="_on_itens_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/Layout UI/InitialButtons/HBoxContainer/Run" to="Camera2D/FightUI" method="_on_run_pressed"]
-[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill1" to="Camera2D/FightUI" method="_on_skill_1_pressed"]
-[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill2" to="Camera2D/FightUI" method="_on_skill_2_pressed"]
-[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill3" to="Camera2D/FightUI" method="_on_skill_3_pressed"]
-[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill4" to="Camera2D/FightUI" method="_on_skill_3_pressed"]
-[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill5" to="Camera2D/FightUI" method="_on_skill_3_pressed"]
-[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill6" to="Camera2D/FightUI" method="_on_skill_3_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill1" to="Fight" method="_on_skill_1_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill2" to="Fight" method="_on_skill_2_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill3" to="Fight" method="_on_skill_3_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill4" to="Fight" method="_on_skill_4_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill5" to="Fight" method="_on_skill_5_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill6" to="Fight" method="_on_skill_6_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill7" to="Fight" method="_on_skill_7_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill8" to="Fight" method="_on_skill_8_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/Layout UI/FightButtons/ScrollContainer/SkillsButtons/Skill9" to="Fight" method="_on_skill_9_pressed"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
