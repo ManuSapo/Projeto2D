@@ -18,6 +18,7 @@ var direction: String = "down"
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var fightUI = $Camera2D/FightUI
 @onready var dummy = $DummyCharacter
+@onready var buttons = $Camera2D/FightUI/LayoutUI/FightButtons
 
 signal healthChanged
 signal manaChanged
@@ -26,7 +27,6 @@ signal enemyContact(collider_scene)
 signal fightCalled
 signal stopEverything
 signal moveEverything
-signal SkillUsed
 
 
 func _ready():
@@ -150,6 +150,14 @@ func _enemyFight():
 func sillyTest():
 	pass
  
+func startTurn():
+	buttons.show()
+	print("aperta o botão")
+	
+func endTurn():
+	buttons.hide()
+	print("turno acabou")
+
 
 func _on_detection_body_entered(body):
 	if body.has_method("_enemy"):

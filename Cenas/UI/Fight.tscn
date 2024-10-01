@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://u3vtitvp5g4d"]
+[gd_scene load_steps=2 format=3 uid="uid://u3vtitvp5g4d"]
 
 [ext_resource type="Script" path="res://Cenas/UI/FightScene.gd" id="1_rog8c"]
-[ext_resource type="PackedScene" uid="uid://chvp1l818h8xa" path="res://Cenas/Enemy/flying_demon.tscn" id="2_x4up3"]
-[ext_resource type="PackedScene" uid="uid://btguhg0x5xppn" path="res://Cenas/Enemy/Mushroom.tscn" id="3_8nry5"]
 
 [node name="Control" type="Control"]
 modulate = Color(1, 1, 1, 0.0431373)
@@ -18,7 +16,6 @@ offset_bottom = -376.192
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rog8c")
-enemys = Array[PackedScene]([ExtResource("2_x4up3"), ExtResource("3_8nry5"), null, null, null, null, null, null, null, null])
 
 [node name="StartTurn" type="Node2D" parent="."]
 

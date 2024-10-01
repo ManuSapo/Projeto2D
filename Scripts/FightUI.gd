@@ -1,10 +1,10 @@
 extends Control
 
 @onready var personagem = get_node("../..")
-@onready var initialButtons = $"Layout UI/InitialButtons"
-@onready var fightButtons = $"Layout UI/FightButtons"
-@onready var fightButton = $"Layout UI/InitialButtons/HBoxContainer/Fight"
-@onready var backButton = $"Layout UI/InitialButtons/HBoxContainer/Back"
+@onready var initialButtons = $"LayoutUI/InitialButtons"
+@onready var fightButtons = $"LayoutUI/FightButtons"
+@onready var fightButton = $"LayoutUI/InitialButtons/HBoxContainer/Fight"
+@onready var backButton = $"LayoutUI/InitialButtons/HBoxContainer/Back"
 
 var actualEnemy
 
