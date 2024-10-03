@@ -16,6 +16,7 @@ ManaCost = 0
 Turns = 0
 Description = "It Damages the enemy"
 icon = SubResource("AtlasTexture_pn85t")
+skill_type = 0
 
 [sub_resource type="Resource" id="Resource_y1bgp"]
 script = ExtResource("2_pcsai")
@@ -24,6 +25,7 @@ Name = ""
 ManaCost = 0
 Turns = 0
 Description = ""
+skill_type = 0
 
 [resource]
 script = ExtResource("1_fhp72")

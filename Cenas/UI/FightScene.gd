@@ -5,11 +5,12 @@ extends Control
 @onready var fightButton = get_node("../Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight")
 @onready var backButton = get_node("../Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back")
 @onready var player = get_node("/root/Geral/Personagem")
+@onready var enemyStats
 
 var enemy
 var actualTurn: String = "start"
 var actualSkill
-
+var isFighthing: bool
 
 func _ready():
 	onReadyGeneral()
@@ -70,7 +71,11 @@ func _on_back_pressed() -> void:
 	backButton.hide()
 	fightButtons.hide()
 
-
+@warning_ignore("shadowed_variable")
+func enemyStatus(enemy):
+	if enemy is CharacterBody2D:
+		enemyStats = enemy.status
+		print(enemyStats.health)
 
 
 

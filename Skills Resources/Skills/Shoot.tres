@@ -15,3 +15,4 @@ ManaCost = 0
 Turns = 0
 Description = "Shoots one single bullet"
 icon = SubResource("AtlasTexture_3errk")
+skill_type = 0

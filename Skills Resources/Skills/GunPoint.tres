@@ -11,3 +11,4 @@ ManaCost = 0
 Turns = 0
 Description = ""
 icon = ExtResource("1_m1byj")
+skill_type = 2

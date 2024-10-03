@@ -19,6 +19,7 @@ var direction: String = "down"
 @onready var fightUI = $Camera2D/FightUI
 @onready var dummy = $DummyCharacter
 @onready var buttons = $Camera2D/FightUI/LayoutUI/FightButtons
+@onready var Fight = $Fight
 
 signal healthChanged
 signal manaChanged
@@ -163,3 +164,4 @@ func _on_detection_body_entered(body):
 	if body.has_method("_enemy"):
 		_enemyFight()
 		GameManager.Enemy(body)
+		Fight.enemyStatus(body)

@@ -81,8 +81,9 @@ Damage = 5
 Name = "Heal"
 ManaCost = 0
 Turns = 0
-Description = ""
+Description = "This skill heals the player"
 icon = ExtResource("15_w0w1i")
+skill_type = 1
 
 [sub_resource type="Resource" id="Resource_0m0hc"]
 script = ExtResource("16_0jkny")
@@ -92,6 +93,7 @@ ManaCost = 0
 Turns = 0
 Description = ""
 icon = ExtResource("16_bvk5q")
+skill_type = 0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmwiw"]
 atlas = ExtResource("1_ns7mu")
