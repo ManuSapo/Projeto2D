@@ -48,7 +48,6 @@ func changeDirection():
 
 
 func _on_timer_timeout():
-	_fight()
 	canCollide = true
 
 func changeMove():

@@ -38,10 +38,14 @@ func _endFight():
 
 
 func _useSkill():
+	var damage
 	if actualTurn == "start":
-		onHideAll()
-		player.endTurn()
-		actualTurn = "Calculating"
+		if actualSkill.skill_type == damage:
+			var damageGiven
+			damageGiven = (actualSkill.damage + player.status.attack) - ( player.status.defesa * .066) 
+			round(damage)
+
+		
 
 func _calculating():
 	pass
@@ -76,7 +80,6 @@ func enemyStatus(enemy):
 	if enemy is CharacterBody2D:
 		enemyStats = enemy.status
 		print(enemyStats.health)
-
 
 
 

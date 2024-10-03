@@ -13,10 +13,7 @@ class_name StatusPlayer
 #funções de combate
 func take_damage(amount: int):
 	print("taking damage")
-	var damage
-	damage = (amount + attack) - (defense * 0.66)
-	round(damage)
-	health -= damage
+	health -= amount
 	if health < 0:
 		health = 0
 		print("player died")
@@ -25,10 +22,7 @@ func take_damage(amount: int):
 
 
 func heal(amount: int):
-	var healV
-	healV = amount + (defense * 0.66)
-	round(healV)
-	health += healV
+	health += amount
 	
 	if health > max_health:
 		health = max_health
