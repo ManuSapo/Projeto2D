@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_d4uhk")
-Damage = 8
+Damage = 10
 Name = "Shoot!"
 ManaCost = 0
 Turns = 0

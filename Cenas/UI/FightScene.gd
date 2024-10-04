@@ -6,8 +6,8 @@ extends Control
 @onready var backButton = get_node("../Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back")
 @onready var player = get_node("/root/Geral/Personagem")
 @onready var enemyStats
+@onready var actualEnemy: CharacterBody2D
 
-var enemy
 var actualTurn: String = "start"
 var actualSkill
 var isFighthing: bool
@@ -38,14 +38,22 @@ func _endFight():
 
 
 func _useSkill():
-	var damage
 	if actualTurn == "start":
-		if actualSkill.skill_type == damage:
-			var damageGiven
-			damageGiven = (actualSkill.damage + player.status.attack) - ( player.status.defesa * .066) 
-			round(damage)
+		if actualSkill.skill_type == 0:
+			var damageGiven: int
+			damageGiven = (actualSkill.Damage + player.status.attack) - (enemyStats.defense * 0.66)
+			round(damageGiven)
+			actualEnemy.status.takeDamage(damageGiven)
+			print(actualEnemy.name)
+			print(damageGiven)
+		elif actualSkill.skill_type == 1:
+			var healGiven: int
+			healGiven = (actualSkill.Damage + player.status.defense * 0.66)
+			round(healGiven)
+			actualEnemy.status.takeDamage(healGiven)
+			print(actualEnemy.name)
+			print(healGiven)
 
-		
 
 func _calculating():
 	pass
@@ -78,6 +86,7 @@ func _on_back_pressed() -> void:
 @warning_ignore("shadowed_variable")
 func enemyStatus(enemy):
 	if enemy is CharacterBody2D:
+		actualEnemy = enemy
 		enemyStats = enemy.status
 		print(enemyStats.health)
 

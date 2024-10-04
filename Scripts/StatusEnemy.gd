@@ -10,7 +10,7 @@ class_name StatusEnemy
 @export var defense: int = 5
 @export var speed: int = 10
 
-func take_damage(amount: int):
+func takeDamage(amount: int):
 	health -= amount
 	if health < 0:
 		health = 0

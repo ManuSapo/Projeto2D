@@ -3,7 +3,6 @@ extends CharacterBody2D
 var canMove: bool
 var direction: String = "down"
 
-@export var speed = 50.0
 @export var isMoving: bool = false
 @export var isRunning: bool = false
 @export var status: StatusPlayer = StatusPlayer.new()
@@ -47,20 +46,22 @@ func _sideThings():
 	var healthtext
 	healthtext = status.get("health")
 	healthLabel.text = str(healthtext)
-	if speed > 50:
+	if status.speed > 50:
 		isRunning = true
 	else:
 		isRunning = false
 		
 	_damageMe()
 	_healMe()
+
+
 #lida com a movimentação básica
 func _movement(delta):
 	@warning_ignore("shadowed_variable_base_class")
 	var velocity = Vector2()
 	@warning_ignore("unused_variable")
-	
-	# Movimento horizontal
+
+# Movimento horizontal
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 		direction = "right"
@@ -78,7 +79,7 @@ func _movement(delta):
 		
 	# Normaliza o vetor de velocidade para garantir velocidade constante
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed * delta
+		velocity = velocity.normalized() * status.speed * delta
 	if velocity.length() > 0:
 		isMoving = true
 	else:
@@ -90,9 +91,9 @@ func _movement(delta):
 #lida com a corrida
 func _running():
 	if Input.is_action_pressed("run"):
-		speed = 100
+		status.speed = 100
 	if Input.is_action_just_released("run"):
-		speed = 50
+		status.speed = 50
 
 #lida com as animações
 func _animation():
@@ -121,7 +122,7 @@ func _animation():
 func _damageMe():
 	if Input.is_action_just_pressed("interact"):
 		healthChanged.emit()
-		status.take_damage(5)
+		status.takeDamage(5)
 		status.spendMana(2)
 		manaChanged.emit()
 

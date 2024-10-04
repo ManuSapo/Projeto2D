@@ -28,7 +28,7 @@ mana = 50
 max_mana = 50
 attack = 10
 defense = 5
-speed = 10
+speed = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygr6s"]
 atlas = ExtResource("4_10nln")

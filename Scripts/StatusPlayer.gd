@@ -11,15 +11,13 @@ class_name StatusPlayer
 @export var speed: int = 10
 
 #funções de combate
-func take_damage(amount: int):
+func takeDamage(amount: int):
 	print("taking damage")
 	health -= amount
 	if health < 0:
 		health = 0
 		print("player died")
 		
-
-
 
 func heal(amount: int):
 	health += amount
