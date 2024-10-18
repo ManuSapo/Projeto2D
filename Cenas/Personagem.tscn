@@ -719,8 +719,8 @@ texture = SubResource("AtlasTexture_hj15s")
 
 [node name="Fight" parent="." instance=ExtResource("21_adydj")]
 
-[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Fight" method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Fight" method="_on_fight_pressed"]
