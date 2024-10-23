@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bedy4ekkqekwe"]
+[gd_scene load_steps=20 format=3 uid="uid://bedy4ekkqekwe"]
 
 [ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="1_auika"]
 [ext_resource type="Texture2D" uid="uid://b7m0a6elqjngg" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_10.png" id="2_x1n48"]
 [ext_resource type="Script" path="res://Scripts/Skill_button.gd" id="3_6sjnx"]
+[ext_resource type="FontFile" uid="uid://qn0iv0rp48br" path="res://Assets Visuais/Fonts/monogram.ttf" id="4_rcbkp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8m1y0"]
 
@@ -35,6 +36,77 @@ Button/styles/hover = SubResource("StyleBoxTexture_j853c")
 Button/styles/normal = SubResource("StyleBoxTexture_7x2oy")
 Button/styles/pressed = SubResource("StyleBoxTexture_qi8vk")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3x02"]
+atlas = ExtResource("1_auika")
+region = Rect2(81, 97, 30, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_23bcs"]
+texture = SubResource("AtlasTexture_g3x02")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+modulate_color = Color(0.14902, 0.168627, 0.266667, 0.784314)
+
+[sub_resource type="Theme" id="Theme_bb8la"]
+Panel/styles/panel = SubResource("StyleBoxTexture_23bcs")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clfxp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qi4sp"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djdh2"]
+bg_color = Color(0.906328, 0.360942, 0.73812, 1)
+
+[sub_resource type="Theme" id="Theme_trdpx"]
+default_base_scale = 2.0
+default_font = ExtResource("4_rcbkp")
+default_font_size = 7
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+RichTextLabel/colors/table_border = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 1
+RichTextLabel/constants/table_h_separation = 3
+RichTextLabel/constants/table_v_separation = 3
+RichTextLabel/constants/text_highlight_h_padding = 3
+RichTextLabel/constants/text_highlight_v_padding = 3
+RichTextLabel/font_sizes/mono_font_size = 16
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_clfxp")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_qi4sp")
+RichTextLabel/styles/scroll = SubResource("StyleBoxFlat_djdh2")
+
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(32, 32)
 offset_right = 32.0
@@ -43,3 +115,26 @@ theme = SubResource("Theme_33rdu")
 icon = ExtResource("2_x1n48")
 icon_alignment = 1
 script = ExtResource("3_6sjnx")
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 33.0
+offset_bottom = 32.0
+theme = SubResource("Theme_bb8la")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 28.0
+theme = SubResource("Theme_trdpx")
+text = "asdfasfsdafsdfasdfsadfsdfas"
+tab_size = 10
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

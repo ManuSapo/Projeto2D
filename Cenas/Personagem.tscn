@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://0of2t1bcmgpj"]
+[gd_scene load_steps=87 format=3 uid="uid://0of2t1bcmgpj"]
 
 [ext_resource type="Script" path="res://Cenas/Personagem.gd" id="1_10i7r"]
 [ext_resource type="Texture2D" uid="uid://yhwurw8kq3dy" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_idle_anim_16x16.png" id="1_ns7mu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/CameraPosition.gd" id="6_lwkjg"]
 [ext_resource type="Script" path="res://Cenas/ManaBar.gd" id="6_qqbhs"]
 [ext_resource type="Texture2D" uid="uid://c5uibcdkxipw6" path="res://Assets Visuais/UI/Steampunk UI.png" id="10_3i0a2"]
+[ext_resource type="Texture2D" uid="uid://bta4y6dcpdtx2" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_18.png" id="11_gowej"]
 [ext_resource type="PackedScene" uid="uid://b72re4dhnon65" path="res://Cenas/UI/TextButton.tscn" id="11_phosy"]
 [ext_resource type="PackedScene" uid="uid://bedy4ekkqekwe" path="res://Cenas/UI/SkillButton.tscn" id="12_2aa3t"]
 [ext_resource type="Texture2D" uid="uid://bi8pnctfha41p" path="res://Assets Visuais/Personagem/Modern Tiles/Adam_phone_16x16.png" id="12_q1whl"]
@@ -74,6 +75,16 @@ modulate_color = Color(0.698039, 0.482353, 0.639216, 1)
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_pq7fq")
 VScrollBar/styles/scroll = SubResource("StyleBoxTexture_h3qsx")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_r2k0m")
+
+[sub_resource type="Resource" id="Resource_ir4uk"]
+script = ExtResource("16_0jkny")
+Damage = 12
+Name = "Sapo"
+ManaCost = 0
+Turns = 0
+Description = ""
+icon = ExtResource("11_gowej")
+skill_type = 0
 
 [sub_resource type="Resource" id="Resource_edgoi"]
 script = ExtResource("16_0jkny")
@@ -490,7 +501,7 @@ status = SubResource("Resource_i4tir")
 skills = ExtResource("3_daho1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 script = ExtResource("6_lwkjg")
 
@@ -646,18 +657,25 @@ text = "Run"
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Camera2D/FightUI/LayoutUI/FightButtons"]
+custom_minimum_size = Vector2(36, 105)
 layout_mode = 0
-offset_left = -132.0
-offset_top = -4.0
-offset_right = -96.0
-offset_bottom = 96.0
+offset_left = -160.0
+offset_top = -12.0
+offset_right = -124.0
+offset_bottom = 93.0
 theme = SubResource("Theme_k5dg8")
 follow_focus = true
 
 [node name="SkillsButtons" type="VBoxContainer" parent="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer"]
 custom_minimum_size = Vector2(24, 104)
+layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 2
+
+[node name="Button" parent="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
+layout_mode = 2
+skill = SubResource("Resource_ir4uk")
 
 [node name="Skill1" parent="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
 layout_mode = 2
