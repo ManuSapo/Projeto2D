@@ -28,7 +28,7 @@ mana = 50
 max_mana = 50
 attack = 10
 defense = 5
-speed = 50
+speed = 60
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygr6s"]
 atlas = ExtResource("4_10nln")
@@ -490,7 +490,7 @@ status = SubResource("Resource_i4tir")
 skills = ExtResource("3_daho1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 script = ExtResource("6_lwkjg")
 
@@ -646,6 +646,7 @@ text = "Run"
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Camera2D/FightUI/LayoutUI/FightButtons"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 105)
 layout_mode = 0
 offset_left = -160.0

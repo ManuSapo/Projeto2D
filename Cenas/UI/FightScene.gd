@@ -7,27 +7,20 @@ extends Control
 @onready var player = get_node("/root/Geral/Personagem")
 @onready var enemyStats
 @onready var actualEnemy: CharacterBody2D
-@onready var scrollBox = get_node("../Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer")
-@onready var buttonsList = get_node("../Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons")
-@onready var skillButtonScene = preload("res://Cenas/UI/SkillButton.tscn")
-var skillButton
 
 var actualTurn: String = "start"
 var actualSkill
 var isFighthing: bool
+var textShowing: bool = false
 
 func _ready():
 	onReadyGeneral()
-	skillButton = skillButtonScene.instantiate()
-	skillButton.mouseEnteredText.connect(biggerScroll)
-
+	player.notRunning()
 @warning_ignore("unused_parameter")
 
 func _process(delta):
 	pass
 	
-
-
 
 func _startFight():
 	actualTurn = "start"
@@ -40,7 +33,8 @@ func _middleFight():
 func _endFight():
 	pass
 
-
+func _enemyUseSkill():
+	pass
 
 func _useSkill():
 	if actualTurn == "start":
@@ -50,7 +44,7 @@ func _useSkill():
 			round(damageGiven)
 			actualEnemy.status.takeDamage(damageGiven)
 			print(actualEnemy.name)
-			print(damageGiven)
+			print(enemyStats.health)
 		elif actualSkill.skill_type == 1:
 			var healGiven: int
 			healGiven = (actualSkill.Damage + player.status.defense * 0.66)
@@ -59,20 +53,17 @@ func _useSkill():
 			print(actualEnemy.name)
 			print(healGiven)
 
-func biggerScroll():
-	var container = scrollBox.get_child(0)  # Acessa o VBoxContainer ou HBoxContainer
-	var new_size = container.custom_minimum_size
-	new_size.x += 32  # Aumenta o eixo X
-	container.custom_minimum_size = new_size  # Define o novo tamanho
-	print(scrollBox.size)
-	print(container.size)
 
-
-func tinyerScroll():
-	scrollBox.rect_min_size.x = skillButton.rect_min_size.x
-	
 func _calculating():
-	pass
+	if player.status.speed > enemyStats.speed:
+		print("player atacou antes")
+		_useSkill()
+		_enemyUseSkill()
+	elif enemyStats.speed > player.status.speed:
+		print("inimigo atacou antes")
+		_enemyUseSkill()
+		_useSkill()
+
 
 func onHideAll():
 	initialButtons.hide()
@@ -104,7 +95,6 @@ func enemyStatus(enemy):
 	if enemy is CharacterBody2D:
 		actualEnemy = enemy
 		enemyStats = enemy.status
-		print(enemyStats.health)
 
 
 
@@ -113,7 +103,7 @@ func _on_skill_1_pressed() -> void:
 	# Certifique-se de que o caminho está correto:
 	actualSkill = get_node("../Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons/Skill1").skill
 	print("Skill 1 apertada, skill: ", actualSkill.Name)
-	_useSkill()
+	_calculating()
 
 func _on_skill_2_pressed() -> void:
 	actualSkill = get_node("../Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons/Skill2").skill

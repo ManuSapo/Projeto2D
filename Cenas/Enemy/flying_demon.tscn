@@ -18,7 +18,7 @@ mana = 50
 max_mana = 50
 attack = 10
 defense = 5
-speed = 10
+speed = 60
 
 [sub_resource type="Resource" id="Resource_y4jhs"]
 script = ExtResource("5_ewh3f")
@@ -28,6 +28,7 @@ ManaCost = 0
 Turns = 0
 Description = "A basic claw attack"
 icon = ExtResource("4_igt7q")
+skill_type = 0
 
 [sub_resource type="Resource" id="Resource_ew4db"]
 script = ExtResource("3_1iqjn")

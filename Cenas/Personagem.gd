@@ -7,6 +7,7 @@ var direction: String = "down"
 @export var isRunning: bool = false
 @export var status: StatusPlayer = StatusPlayer.new()
 @export var skills: SkillsPlayer = SkillsPlayer.new()
+var oldSpeed: int = 50
 
 @onready var camera = $Camera2D
 @onready var enemy = get_node("/root/Geral/Enemies/FlyingDemon")
@@ -34,6 +35,7 @@ func _ready():
 	overworldBars.show()
 	fightUI.hide()
 	dummy.hide()
+	onlyOnce()
 
 func _process(delta):
 	_sideThings()
@@ -42,11 +44,15 @@ func _process(delta):
 		_movement(delta)
 		_running()
 
+func onlyOnce():
+	oldSpeed = status.speed
+	return
+
 func _sideThings():
 	var healthtext
 	healthtext = status.get("health")
 	healthLabel.text = str(healthtext)
-	if status.speed > 50:
+	if status.speed > oldSpeed:
 		isRunning = true
 	else:
 		isRunning = false
@@ -90,14 +96,18 @@ func _movement(delta):
 
 #lida com a corrida
 func _running():
-	if Input.is_action_pressed("run"):
-		status.speed = 100
+	if Input.is_action_just_pressed("run"):
+		status.speed = status.speed * 2
+		if status.speed > oldSpeed * 2:
+			status.speed = oldSpeed * 2
 	if Input.is_action_just_released("run"):
-		status.speed = 50
+		status.speed = oldSpeed
 
+func notRunning():
+	status.speed = oldSpeed
+	
 #lida com as animações
 func _animation():
-	
 	if !isMoving:
 		match direction:
 			"up":
