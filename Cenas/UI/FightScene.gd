@@ -7,6 +7,10 @@ extends Control
 @onready var player = get_node("/root/Geral/Personagem")
 @onready var enemyStats
 @onready var actualEnemy: CharacterBody2D
+@onready var scrollBox = get_node("../Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer")
+@onready var buttonsList = get_node("../Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons")
+@onready var skillButtonScene = preload("res://Cenas/UI/SkillButton.tscn")
+var skillButton
 
 var actualTurn: String = "start"
 var actualSkill
@@ -14,8 +18,9 @@ var isFighthing: bool
 
 func _ready():
 	onReadyGeneral()
-	
-	
+	skillButton = skillButtonScene.instantiate()
+	skillButton.mouseEnteredText.connect(biggerScroll)
+
 @warning_ignore("unused_parameter")
 
 func _process(delta):
@@ -54,7 +59,18 @@ func _useSkill():
 			print(actualEnemy.name)
 			print(healGiven)
 
+func biggerScroll():
+	var container = scrollBox.get_child(0)  # Acessa o VBoxContainer ou HBoxContainer
+	var new_size = container.custom_minimum_size
+	new_size.x += 32  # Aumenta o eixo X
+	container.custom_minimum_size = new_size  # Define o novo tamanho
+	print(scrollBox.size)
+	print(container.size)
 
+
+func tinyerScroll():
+	scrollBox.rect_min_size.x = skillButton.rect_min_size.x
+	
 func _calculating():
 	pass
 

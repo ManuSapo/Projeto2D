@@ -109,7 +109,7 @@ RichTextLabel/styles/scroll = SubResource("StyleBoxFlat_djdh2")
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(32, 32)
-offset_right = 32.0
+offset_right = 33.0
 offset_bottom = 32.0
 theme = SubResource("Theme_33rdu")
 icon = ExtResource("2_x1n48")
@@ -120,21 +120,27 @@ script = ExtResource("3_6sjnx")
 clip_contents = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 1.0
-offset_right = 33.0
+offset_left = 33.0
+offset_right = 66.0
 offset_bottom = 32.0
 theme = SubResource("Theme_bb8la")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 0
-offset_left = 4.0
+offset_left = 3.0
 offset_top = 4.0
-offset_right = 28.0
+offset_right = 30.0
 offset_bottom = 28.0
 theme = SubResource("Theme_trdpx")
 text = "asdfasfsdafsdfasdfsadfsdfas"
 tab_size = 10
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[node name="Container" type="Container" parent="."]
+custom_minimum_size = Vector2(33, 32)
+layout_mode = 0
+offset_right = 33.0
+offset_bottom = 32.0
+
+[connection signal="mouse_entered" from="Container" to="." method="_on_container_mouse_entered"]
+[connection signal="mouse_exited" from="Container" to="." method="_on_container_mouse_exited"]
