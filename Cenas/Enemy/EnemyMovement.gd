@@ -1,14 +1,19 @@
 extends CharacterBody2D
 
-@export var speed = 15.0
 var direction: Vector2
-@export var isRoaming: bool
-@export var isFollowing: bool
 var canCollide: bool
 var canMove: bool = true
 @onready var timer = $Timer
+@export var isRoaming: bool
+@export var isFollowing: bool
 @export var status: StatusEnemy = StatusEnemy.new()
 @export var skills: SkillsEnemy = SkillsEnemy.new()
+@export var speed = 15.0
+@export var enemy_difficulty: enemyDifficulty = enemyDifficulty.easy
+
+enum enemyDifficulty { easy, medium, hard, horde, boss, support }
+
+
 signal EhealthChanged
 
 func _ready():
