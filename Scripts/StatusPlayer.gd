@@ -4,6 +4,7 @@ class_name StatusPlayer
 #status
 @export var health: int = 100
 @export var max_health: int = 100
+@export var shield: int = 100
 @export var mana: int = 50
 @export var max_mana: int = 50
 @export var attack: int = 10
@@ -24,6 +25,12 @@ func heal(amount: int):
 	
 	if health > max_health:
 		health = max_health
+		
+func shielding(amount: int):
+	shield += amount
+	
+	if shield > max_health:
+		shield = max_health
 
 func spendMana(amount: int):
 	mana -= amount

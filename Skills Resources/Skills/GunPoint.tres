@@ -6,9 +6,14 @@
 [resource]
 script = ExtResource("2_0ieco")
 Damage = 5
-Name = "Gunpoint"
+Name = "Gun Point"
 ManaCost = 0
 Turns = 0
-Description = ""
+Description = "Charges the gun with energy to give more damage"
 icon = ExtResource("1_m1byj")
 skill_type = 2
+status_type = 0
+damage_type = 0
+damage_element = 0
+heal_type = 0
+buff_type = 1

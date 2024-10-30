@@ -1131,6 +1131,7 @@ sources/11 = SubResource("TileSetAtlasSource_1ynqe")
 
 [sub_resource type="Resource" id="Resource_2isds"]
 script = ExtResource("5_m2qfx")
+enemyLevel = 1
 enemyType = ""
 health = 75
 max_health = 75
@@ -1172,8 +1173,8 @@ speed = 7.0
 
 [node name="Mushroom" parent="Enemies" instance=ExtResource("4_h1guf")]
 position = Vector2(258, 144)
-speed = 5.0
 status = SubResource("Resource_2isds")
+speed = 5.0
 
 [connection signal="moveEverything" from="Personagem" to="." method="_on_personagem_move_everything"]
 [connection signal="stopEverything" from="Personagem" to="." method="_on_personagem_stop_everything"]

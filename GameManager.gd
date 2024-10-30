@@ -9,7 +9,6 @@ var EName: String
 signal canEnd
 
 func _ready():
-	set_difficulty_parameters() # Define os parâmetros da dificuldade
 	pass
 	
 @warning_ignore("unused_parameter")
@@ -34,19 +33,3 @@ func moveController():
 	var enemysOnScene = enemies.get_children()
 	for child in enemysOnScene:
 		child.changeMove()
-
-# Define os parâmetros com base na dificuldade
-func set_difficulty_parameters():
-	match difficulty:
-		"easy":
-			player.max_health = 200
-			for enemy in enemies.get_children():
-				enemy.attack_power = 10
-		"medium":
-			player.max_health = 150
-			for enemy in enemies.get_children():
-				enemy.attack_power = 20
-		"hard":
-			player.max_health = 100
-			for enemy in enemies.get_children():
-				enemy.attack_power = 30

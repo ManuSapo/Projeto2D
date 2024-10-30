@@ -12,3 +12,7 @@ Turns = 0
 Description = "Shoots an enemy with one bullet. The most basic shooting."
 icon = ExtResource("1_66tuu")
 skill_type = 0
+status_type = 0
+damage_type = 2
+damage_element = 3
+heal_type = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://0of2t1bcmgpj"]
+[gd_scene load_steps=86 format=3 uid="uid://0of2t1bcmgpj"]
 
 [ext_resource type="Script" path="res://Cenas/Personagem.gd" id="1_10i7r"]
 [ext_resource type="Texture2D" uid="uid://yhwurw8kq3dy" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_idle_anim_16x16.png" id="1_ns7mu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Cenas/HealthBar.gd" id="4_fh8hf"]
 [ext_resource type="Script" path="res://Scripts/CameraPosition.gd" id="6_lwkjg"]
 [ext_resource type="Script" path="res://Cenas/ManaBar.gd" id="6_qqbhs"]
+[ext_resource type="Script" path="res://Cenas/ShieldBar.gd" id="8_e41ra"]
 [ext_resource type="Texture2D" uid="uid://c5uibcdkxipw6" path="res://Assets Visuais/UI/Steampunk UI.png" id="10_3i0a2"]
 [ext_resource type="PackedScene" uid="uid://b72re4dhnon65" path="res://Cenas/UI/TextButton.tscn" id="11_phosy"]
 [ext_resource type="PackedScene" uid="uid://bedy4ekkqekwe" path="res://Cenas/UI/SkillButton.tscn" id="12_2aa3t"]
@@ -17,13 +18,14 @@
 [ext_resource type="Resource" uid="uid://cfhcre4smvi0o" path="res://Skills Resources/Skills/GunPoint.tres" id="14_r8i4x"]
 [ext_resource type="Texture2D" uid="uid://bwc6i56fulf1" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_11.png" id="15_w0w1i"]
 [ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="16_0jkny"]
-[ext_resource type="Texture2D" uid="uid://ghvf487rfrrs" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_05.png" id="16_bvk5q"]
+[ext_resource type="Texture2D" uid="uid://c8mbvl1ymcpru" path="res://Assets Visuais/UI/power icons/Buffs/defense_boost.png" id="16_wnilc"]
 [ext_resource type="PackedScene" uid="uid://u3vtitvp5g4d" path="res://Cenas/UI/Fight.tscn" id="21_adydj"]
 
 [sub_resource type="Resource" id="Resource_i4tir"]
 script = ExtResource("2_gjy6x")
 health = 100
 max_health = 100
+shield = 100
 mana = 50
 max_mana = 50
 attack = 10
@@ -36,7 +38,7 @@ region = Rect2(135, 20, 52, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8ue1"]
 atlas = ExtResource("4_10nln")
-region = Rect2(72, 22, 49, 3)
+region = Rect2(6, 22, 49, 3)
 margin = Rect2(0, 0, 2, 3)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbtal"]
@@ -84,16 +86,26 @@ Turns = 0
 Description = "This skill heals the player"
 icon = ExtResource("15_w0w1i")
 skill_type = 1
+status_type = 0
+damage_type = 0
+damage_element = 0
+heal_type = 0
+buff_type = 0
 
 [sub_resource type="Resource" id="Resource_0m0hc"]
 script = ExtResource("16_0jkny")
-Damage = 0
-Name = "Charge Something"
+Damage = 5
+Name = "Shields Up!"
 ManaCost = 0
 Turns = 0
-Description = ""
-icon = ExtResource("16_bvk5q")
-skill_type = 0
+Description = "Rise up the shield!"
+icon = ExtResource("16_wnilc")
+skill_type = 1
+status_type = 0
+damage_type = 0
+damage_element = 0
+heal_type = 2
+buff_type = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmwiw"]
 atlas = ExtResource("1_ns7mu")
@@ -524,6 +536,7 @@ size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="LifeBar" type="TextureProgressBar" parent="Camera2D/OverworldBars"]
+self_modulate = Color(0.999214, 0.689364, 0.743754, 1)
 custom_minimum_size = Vector2(78, 7)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -590,6 +603,25 @@ texture_under = SubResource("AtlasTexture_ygr6s")
 texture_progress = SubResource("AtlasTexture_o8ue1")
 texture_progress_offset = Vector2(1.22, 2)
 script = ExtResource("4_fh8hf")
+
+[node name="ShieldBar" type="TextureProgressBar" parent="Camera2D/FightUI/FightBars/LifeBar"]
+modulate = Color(1, 0.941176, 0.152941, 1)
+custom_minimum_size = Vector2(78, 7)
+layout_mode = 2
+offset_right = 78.0
+offset_bottom = 7.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+value = 100.0
+rounded = true
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 2
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_progress = SubResource("AtlasTexture_o8ue1")
+texture_progress_offset = Vector2(1.22, 2)
+script = ExtResource("8_e41ra")
 
 [node name="ManaBar" type="TextureProgressBar" parent="Camera2D/FightUI/FightBars"]
 custom_minimum_size = Vector2(52, 6)
