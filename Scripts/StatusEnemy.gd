@@ -1,6 +1,7 @@
 extends Resource
 class_name StatusEnemy
 
+@export var enemyLevel: int = 1
 @export var enemyType: String
 @export var health: int = 100
 @export var max_health: int = 100

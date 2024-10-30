@@ -11,6 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_e7nhb"]
 script = ExtResource("2_gkcgp")
+enemyLevel = 1
 enemyType = "Plant"
 health = 100
 max_health = 100
@@ -29,6 +30,9 @@ Turns = 0
 Description = "A basic punch"
 icon = ExtResource("4_l3qgw")
 skill_type = 0
+status_type = 0
+damage_type = 0
+damage_element = 0
 
 [sub_resource type="Resource" id="Resource_sqx4x"]
 script = ExtResource("3_bodbj")
@@ -113,6 +117,7 @@ collision_mask = 3
 script = ExtResource("1_tuhcq")
 status = SubResource("Resource_e7nhb")
 skills = SubResource("Resource_sqx4x")
+enemy_difficulty = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_leeuc")
