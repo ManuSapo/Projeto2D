@@ -20,6 +20,8 @@ skill_type = 0
 status_type = 1
 damage_type = 1
 damage_element = 1
+heal_type = 0
+buff_type = 0
 
 [sub_resource type="Resource" id="Resource_y1bgp"]
 script = ExtResource("2_pcsai")
@@ -32,6 +34,8 @@ skill_type = 0
 status_type = 1
 damage_type = 1
 damage_element = 1
+heal_type = 0
+buff_type = 0
 
 [resource]
 script = ExtResource("1_fhp72")

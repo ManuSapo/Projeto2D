@@ -25,7 +25,7 @@
 script = ExtResource("2_gjy6x")
 health = 100
 max_health = 100
-shield = 100
+shield = 0
 mana = 50
 max_mana = 50
 attack = 10
@@ -605,7 +605,6 @@ texture_progress_offset = Vector2(1.22, 2)
 script = ExtResource("4_fh8hf")
 
 [node name="ShieldBar" type="TextureProgressBar" parent="Camera2D/FightUI/FightBars/LifeBar"]
-modulate = Color(1, 0.941176, 0.152941, 1)
 custom_minimum_size = Vector2(78, 7)
 layout_mode = 2
 offset_right = 78.0
@@ -751,8 +750,8 @@ texture = SubResource("AtlasTexture_hj15s")
 
 [node name="Fight" parent="." instance=ExtResource("21_adydj")]
 
-[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Fight" method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Fight" method="_on_fight_pressed"]

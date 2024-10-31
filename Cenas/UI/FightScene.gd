@@ -51,7 +51,6 @@ func _useSkill():
 			round(healGiven)
 			actualEnemy.status.takeDamage(healGiven)
 			print(actualEnemy.name)
-			print(healGiven)
 
 
 func _calculating():
