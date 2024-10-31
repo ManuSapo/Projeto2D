@@ -18,5 +18,5 @@ enum SkillType { DAMAGE, HEALING, BUFF }
 enum StatusType { empty, poison, fire, shock, stun, bleed }
 enum DamageType { empty, meele, distance }
 enum DamageElement { empty, elemental, normal, bullet, laser }
-enum HealType { empty, heal, shield, status, mana }
+enum HealType { empty, heal, shield, mana }
 enum BuffType { empty, attack, speed, defense }

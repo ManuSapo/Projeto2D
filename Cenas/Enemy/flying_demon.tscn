@@ -20,6 +20,10 @@ max_mana = 50
 attack = 10
 defense = 5
 speed = 60
+theActualStatus = 0
+temp_attack = 10
+temp_defense = 5
+temp_speed = 10
 
 [sub_resource type="Resource" id="Resource_y4jhs"]
 script = ExtResource("5_ewh3f")
@@ -33,6 +37,8 @@ skill_type = 0
 status_type = 0
 damage_type = 0
 damage_element = 0
+heal_type = 0
+buff_type = 0
 
 [sub_resource type="Resource" id="Resource_ew4db"]
 script = ExtResource("3_1iqjn")

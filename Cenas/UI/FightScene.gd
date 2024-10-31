@@ -49,8 +49,7 @@ func _useSkill():
 			var healGiven: int
 			healGiven = (actualSkill.Damage + player.status.defense * 0.66)
 			round(healGiven)
-			actualEnemy.status.takeDamage(healGiven)
-			print(actualEnemy.name)
+			player.status.heal(healGiven)
 			print(healGiven)
 
 

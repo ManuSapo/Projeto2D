@@ -1140,6 +1140,10 @@ max_mana = 25
 attack = 5
 defense = 10
 speed = 3
+theActualStatus = 0
+temp_attack = 10
+temp_defense = 5
+temp_speed = 10
 
 [node name="Geral" type="Node2D"]
 script = ExtResource("1_ujd83")
