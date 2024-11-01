@@ -10,7 +10,7 @@ class_name StatusPlayer
 @export var attack: int = 10
 @export var defense: int = 5
 @export var speed: int = 10
-@export var ActualStatus: actualStatus = actualStatus.empty
+@export var Actual_Status: actualStatus = actualStatus.empty
 
 @export var temp_attack: int = 10
 @export var temp_defense: int = 5
@@ -20,6 +20,9 @@ class_name StatusPlayer
 enum actualStatus { empty, poison, fire, shock, stun, bleed }
 
 signal turnEnded
+
+func process():
+	pass
 
 #funções de combate
 func takeDamage(amount: int):

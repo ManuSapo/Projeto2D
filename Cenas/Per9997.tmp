@@ -31,7 +31,7 @@ max_mana = 50
 attack = 10
 defense = 5
 speed = 60
-Actual_Status = 0
+ActualStatus = 0
 temp_attack = 10
 temp_defense = 5
 temp_speed = 10
@@ -579,7 +579,6 @@ texture_progress_offset = Vector2(1.2, 2)
 script = ExtResource("6_qqbhs")
 
 [node name="FightUI" type="Control" parent="Camera2D"]
-modulate = Color(0, 0.839216, 1, 1)
 layout_mode = 3
 anchors_preset = 0
 offset_left = -144.0

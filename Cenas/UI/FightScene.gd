@@ -2,6 +2,7 @@ extends Control
 
 @onready var initialButtons = get_node("../Camera2D/FightUI/LayoutUI/InitialButtons")
 @onready var fightButtons = get_node("../Camera2D/FightUI/LayoutUI/FightButtons")
+@onready var FightUI = get_node("../Camera2D/FightUI/")
 @onready var fightButton = get_node("../Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight")
 @onready var backButton = get_node("../Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back")
 @onready var player = get_node("/root/Geral/Personagem")
@@ -19,7 +20,7 @@ func _ready():
 @warning_ignore("unused_parameter")
 
 func _process(delta):
-	pass
+	clean()
 	
 
 func _startFight():
@@ -49,6 +50,7 @@ func _useSkill():
 			var healGiven: int
 			healGiven = (actualSkill.Damage + player.status.defense * 0.66)
 			round(healGiven)
+			player.status.shielding(healGiven)
 			player.status.heal(healGiven)
 			print(healGiven)
 
@@ -63,7 +65,20 @@ func _calculating():
 		_enemyUseSkill()
 		_useSkill()
 
-
+func clean():
+	if player.status.Actual_Status == 0:
+		FightUI.modulate = Color(1, 1, 1, 1)
+	elif player.status.Actual_Status == 1:
+		FightUI.modulate = Color(1, 0.73, 1, 1)
+	elif player.status.Actual_Status == 2:
+		FightUI.modulate = Color(1, 0.43, 0.13, 1)
+	elif player.status.Actual_Status == 3:
+		FightUI.modulate = Color(0, 0.83, 1, 1)
+		
+		
+		
+		
+		
 func onHideAll():
 	initialButtons.hide()
 

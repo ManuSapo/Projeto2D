@@ -22,6 +22,7 @@ var oldSpeed: int = 50
 @onready var Fight = $Fight
 
 signal healthChanged
+@warning_ignore("unused_signal")
 signal shieldChanged
 signal manaChanged
 @warning_ignore("unused_signal")
