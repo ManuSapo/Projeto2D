@@ -56,46 +56,49 @@ func regenMana(amount: int):
 	if mana > max_mana:
 		mana = max_mana
 
-func poison():
-	var poisonDamage
-	poisonDamage = max_health * 0.2
-	@warning_ignore("narrowing_conversion")
-	temp_defense -= defense * 0.85
-	print(temp_defense)
-	print(poisonDamage)
-	health -= poisonDamage
-	if health < 0:
-		health = 0
-		print("player died")
+func statusDamages():
+	if Actual_Status == 1:
+		var poisonDamage
+		poisonDamage = max_health * 0.2
+		@warning_ignore("narrowing_conversion")
+		temp_defense -= defense * 0.85
+		print(temp_defense)
+		print(poisonDamage)
+		health -= poisonDamage
+		if health < 0:
+			health = 0
+			print("player died")
+	elif Actual_Status == 2:
+		var fireDamage
+		fireDamage = max_health * 0.05
+		@warning_ignore("narrowing_conversion")
+		temp_attack = attack * 0.85
+		print(temp_attack)
+		print(fireDamage)
+		health -= fireDamage
+		if health < 0:
+			health = 0
+			print("player died")
+	elif Actual_Status == 3:
+		var shockDamage
+		shockDamage = max_health * 0.1
+		@warning_ignore("narrowing_conversion")
+		temp_speed = speed * 0.85
+		print(temp_speed)
+		print(shockDamage)
+		health -= shockDamage
+		if health < 0:
+			health = 0
+			print("player died")
+	elif Actual_Status == 4:
+		var beforeStun
+		beforeStun = temp_attack
+		temp_attack = 0
+		await turnEnded
+		temp_attack = beforeStun
+		print(temp_speed)
+	else:
+		temp_attack = attack
+		temp_defense = defense
+		temp_speed = speed
 		
-func fire():
-	var fireDamage
-	fireDamage = max_health * 0.05
-	@warning_ignore("narrowing_conversion")
-	temp_attack = attack * 0.85
-	print(temp_attack)
-	print(fireDamage)
-	health -= fireDamage
-	if health < 0:
-		health = 0
-		print("player died")
-		
-func shock():
-	var shockDamage
-	shockDamage = max_health * 0.1
-	@warning_ignore("narrowing_conversion")
-	temp_speed = speed * 0.85
-	print(temp_speed)
-	print(shockDamage)
-	health -= shockDamage
-	if health < 0:
-		health = 0
-		print("player died")
-
-func stun():
-	var beforeStun
-	beforeStun = temp_attack
-	temp_attack = 0
-	await turnEnded
-	temp_attack = beforeStun
-	print(temp_speed)
