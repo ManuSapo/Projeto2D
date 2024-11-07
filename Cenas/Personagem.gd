@@ -34,7 +34,7 @@ signal moveEverything
 
 func _ready():
 	canMove = true
-	overworldBars.show()
+	overworldBars.show() 
 	fightUI.hide()
 	dummy.hide()
 	onlyOnce()

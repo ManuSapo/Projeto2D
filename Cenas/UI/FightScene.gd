@@ -35,7 +35,7 @@ func _endFight():
 	pass
 
 func _enemyUseSkill():
-	pass
+	actualEnemy.status.statusDamages()
 
 func _useSkill():
 	if actualTurn == "start":
@@ -46,6 +46,8 @@ func _useSkill():
 			actualEnemy.status.takeDamage(damageGiven)
 			print(actualEnemy.name)
 			print(enemyStats.health)
+			player.status.statusDamages()
+			changeStatus()
 		elif actualSkill.skill_type == 1:
 			var healGiven: int
 			healGiven = (actualSkill.Damage + player.status.defense * 0.66)
@@ -53,7 +55,9 @@ func _useSkill():
 			player.status.shielding(healGiven)
 			player.status.heal(healGiven)
 			print(healGiven)
-
+			player.status.statusDamages()
+			changeStatus()
+	print(actualEnemy.status.Actual_Status)
 
 func _calculating():
 	if player.status.speed > enemyStats.speed:
@@ -65,6 +69,17 @@ func _calculating():
 		_enemyUseSkill()
 		_useSkill()
 
+func changeStatus():
+	if actualSkill.status_type == 1:
+		actualEnemy.status.Actual_Status = 1
+	elif actualSkill.status_type == 2: 
+		actualEnemy.status.Actual_Status = 2
+	elif actualSkill.status_type == 3: 
+		actualEnemy.status.Actual_Status = 3
+	
+	
+	
+	
 func clean():
 	if player.status.Actual_Status == 0:
 		FightUI.modulate = Color(1, 1, 1, 1)
@@ -97,6 +112,8 @@ func _on_itens_pressed():
 
 func _on_run_pressed():
 	player._enemyFight()
+	actualEnemy.status.Actual_Status = 0
+	player.status.Actual_Status = 0
 	GameManager.canEnd.emit()
 
 func _on_back_pressed() -> void:

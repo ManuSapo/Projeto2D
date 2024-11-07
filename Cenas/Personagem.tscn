@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://0of2t1bcmgpj"]
+[gd_scene load_steps=89 format=3 uid="uid://0of2t1bcmgpj"]
 
 [ext_resource type="Script" path="res://Cenas/Personagem.gd" id="1_10i7r"]
 [ext_resource type="Texture2D" uid="uid://yhwurw8kq3dy" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_idle_anim_16x16.png" id="1_ns7mu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bwc6i56fulf1" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_11.png" id="15_w0w1i"]
 [ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="16_0jkny"]
 [ext_resource type="Texture2D" uid="uid://c8mbvl1ymcpru" path="res://Assets Visuais/UI/power icons/Buffs/defense_boost.png" id="16_wnilc"]
+[ext_resource type="Texture2D" uid="uid://dskq4yypxq05g" path="res://Assets Visuais/UI/Icons/1 Icons/8/Skillicon8_03.png" id="17_vbp83"]
 [ext_resource type="PackedScene" uid="uid://u3vtitvp5g4d" path="res://Cenas/UI/Fight.tscn" id="21_adydj"]
 
 [sub_resource type="Resource" id="Resource_i4tir"]
@@ -31,7 +32,7 @@ max_mana = 50
 attack = 10
 defense = 5
 speed = 60
-Actual_Status = 0
+Actual_Status = 1
 temp_attack = 10
 temp_defense = 5
 temp_speed = 10
@@ -115,6 +116,21 @@ damage_type = 0
 damage_element = 0
 heal_type = 2
 buff_type = 3
+
+[sub_resource type="Resource" id="Resource_r4hfc"]
+script = ExtResource("16_0jkny")
+Damage = 1
+Name = "Radioactivity"
+ManaCost = 0
+Turns = 0
+Description = ""
+icon = ExtResource("17_vbp83")
+skill_type = 0
+status_type = 2
+damage_type = 2
+damage_element = 3
+heal_type = 0
+buff_type = 0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmwiw"]
 atlas = ExtResource("1_ns7mu")
@@ -721,6 +737,7 @@ skill = SubResource("Resource_0m0hc")
 [node name="Skill5" parent="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
 visible = false
 layout_mode = 2
+skill = SubResource("Resource_r4hfc")
 
 [node name="Skill6" parent="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
 visible = false
@@ -760,8 +777,8 @@ texture = SubResource("AtlasTexture_hj15s")
 
 [node name="Fight" parent="." instance=ExtResource("21_adydj")]
 
-[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Fight" method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Fight" method="_on_fight_pressed"]

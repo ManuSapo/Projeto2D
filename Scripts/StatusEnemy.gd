@@ -28,20 +28,15 @@ func takeDamage(amount: int):
 		health = 0
 		print("enemy died")
 
-
-
-
 func heal(amount: int):
 	health += amount
 	if health > max_health:
 		health = max_health
 
-
 func spendMana(amount: int):
 	mana -= amount
 	if mana < 0:
 		mana = 0
-
 
 func regenMana(amount: int):
 	mana += amount
@@ -90,7 +85,7 @@ func statusDamages():
 		await turnEnded
 		temp_attack = beforeStun
 		print(temp_speed)
-	else:
+	elif Actual_Status == 0:
 		temp_attack = attack
 		temp_defense = defense
 		temp_speed = speed
