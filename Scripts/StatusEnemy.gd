@@ -43,6 +43,19 @@ func regenMana(amount: int):
 	if mana > max_mana:
 		mana = max_mana
 
+func onlyPoison():
+	if Actual_Status == 1:
+		var poisonDamage
+		poisonDamage = max_health * 0.2
+		@warning_ignore("narrowing_conversion")
+		temp_defense -= defense * 0.85
+		print(temp_defense)
+		print(poisonDamage)
+		health -= poisonDamage
+		if health < 0:
+			health = 0
+			print("enemy died")
+
 
 func statusDamages():
 	if Actual_Status == 1:

@@ -66,6 +66,17 @@ func changeMove():
 		print("estado de movimento = ", canMove)
 		return
 
+	
+func uiColor():
+	if status.Actual_Status == 0:
+		modulate = Color(1, 1, 1, 1)
+	elif status.Actual_Status == 1:
+		modulate = Color(1, 0.73, 1, 1)
+	elif status.Actual_Status == 2:
+		modulate = Color(1, 0.43, 0.13, 1)
+	elif status.Actual_Status == 3:
+		modulate = Color(0, 0.83, 1, 1)
+
 
 
 func _enemy():

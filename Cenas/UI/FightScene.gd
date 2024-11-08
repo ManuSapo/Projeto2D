@@ -20,7 +20,7 @@ func _ready():
 @warning_ignore("unused_parameter")
 
 func _process(delta):
-	clean()
+	uiColor()
 	
 
 func _startFight():
@@ -36,6 +36,7 @@ func _endFight():
 
 func _enemyUseSkill():
 	actualEnemy.status.statusDamages()
+	actualEnemy.status.onlyPoison()
 
 func _useSkill():
 	if actualTurn == "start":
@@ -71,16 +72,16 @@ func _calculating():
 
 func changeStatus():
 	if actualSkill.status_type == 1:
-		actualEnemy.status.Actual_Status = 1
+		enemyStats.Actual_Status = 1
 	elif actualSkill.status_type == 2: 
-		actualEnemy.status.Actual_Status = 2
+		enemyStats.Actual_Status = 2
 	elif actualSkill.status_type == 3: 
-		actualEnemy.status.Actual_Status = 3
+		enemyStats.Actual_Status = 3
 	
 	
 	
 	
-func clean():
+func uiColor():
 	if player.status.Actual_Status == 0:
 		FightUI.modulate = Color(1, 1, 1, 1)
 	elif player.status.Actual_Status == 1:
