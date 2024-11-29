@@ -10,6 +10,8 @@ var canMove: bool = true
 @export var skills: SkillsEnemy = SkillsEnemy.new()
 @export var speed = 15.0
 @export var enemy_difficulty: enemyDifficulty = enemyDifficulty.easy
+@onready var label = $Label
+
 
 enum enemyDifficulty { easy, medium, hard, horde, boss, support }
 
@@ -24,6 +26,7 @@ func _ready():
 	
 @warning_ignore("unused_parameter")
 func _process(delta):
+	uiColor()
 	if canMove:
 		_movement(delta)
 	
@@ -68,6 +71,7 @@ func changeMove():
 
 	
 func uiColor():
+	label.text = str(status.health)
 	if status.Actual_Status == 0:
 		modulate = Color(1, 1, 1, 1)
 	elif status.Actual_Status == 1:

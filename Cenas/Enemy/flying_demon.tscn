@@ -96,7 +96,6 @@ region = Rect2(72, 22, 49, 3)
 margin = Rect2(0, 0, 2, 3)
 
 [node name="FlyingDemon" type="CharacterBody2D"]
-modulate = Color(1.01075e-06, 0.609243, 0.478252, 1)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_4552j")
@@ -154,5 +153,12 @@ texture_progress = SubResource("AtlasTexture_agd7e")
 texture_progress_offset = Vector2(1.22, 2)
 script = ExtResource("8_utj03")
 enemy = NodePath("../..")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -80.0
+offset_right = 24.0
+offset_bottom = -57.0
+text = "12"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

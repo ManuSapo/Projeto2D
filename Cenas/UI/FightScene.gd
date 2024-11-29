@@ -9,10 +9,17 @@ extends Control
 @onready var enemyStats
 @onready var actualEnemy: CharacterBody2D
 
+@export var Actual_Status: actualStatusEnemy = actualStatusEnemy.empty
+
 var actualTurn: String = "start"
 var actualSkill
 var isFighthing: bool
 var textShowing: bool = false
+
+enum actualStatusEnemy { empty, poison, fire, shock, stun, bleed }
+
+signal turnEnded
+
 
 func _ready():
 	onReadyGeneral()
@@ -65,6 +72,7 @@ func _calculating():
 		print("player atacou antes")
 		_useSkill()
 		_enemyUseSkill()
+		enemyStatusDamages()
 	elif enemyStats.speed > player.status.speed:
 		print("inimigo atacou antes")
 		_enemyUseSkill()
@@ -72,14 +80,60 @@ func _calculating():
 
 func changeStatus():
 	if actualSkill.status_type == 1:
-		enemyStats.Actual_Status = 1
+		Actual_Status = 1
 	elif actualSkill.status_type == 2: 
-		enemyStats.Actual_Status = 2
+		Actual_Status = 2
 	elif actualSkill.status_type == 3: 
-		enemyStats.Actual_Status = 3
+		Actual_Status = 3
 	
 	
-	
+
+func enemyStatusDamages():
+	if Actual_Status == 1:
+		var poisonDamage
+		poisonDamage = enemyStats.max_health * 0.2
+		@warning_ignore("narrowing_conversion")
+		enemyStats.temp_defense -= enemyStats.defense * 0.85
+		print(enemyStats.temp_defense)
+		print(poisonDamage)
+		enemyStats.health -= poisonDamage
+		if enemyStats.health < 0:
+			enemyStats.health = 0
+			print("player died")
+	elif Actual_Status == 2:
+		var fireDamage
+		fireDamage = enemyStats.max_health * 0.05
+		@warning_ignore("narrowing_conversion")
+		enemyStats.temp_attack = enemyStats.attack * 0.85
+		print(enemyStats.temp_attack)
+		print(fireDamage)
+		enemyStats.health -= fireDamage
+		if enemyStats.health < 0:
+			enemyStats.health = 0
+			print("player died")
+	elif Actual_Status == 3:
+		var shockDamage
+		shockDamage = enemyStats.max_health * 0.1
+		@warning_ignore("narrowing_conversion")
+		enemyStats.temp_speed = enemyStats.speed * 0.85
+		print(enemyStats.temp_speed)
+		print(shockDamage)
+		enemyStats.health -= shockDamage
+		if enemyStats.health < 0:
+			enemyStats.health = 0
+			print("player died")
+	elif Actual_Status == 4:
+		var beforeStun
+		beforeStun = enemyStats.temp_attack
+		enemyStats.temp_attack = 0
+		await turnEnded
+		enemyStats.temp_attack = beforeStun
+		print(enemyStats.temp_speed)
+	elif Actual_Status == 0:
+		enemyStats.temp_attack = enemyStats.attack
+		enemyStats.temp_defense = enemyStats.defense
+		enemyStats.temp_speed = enemyStats.speed
+
 	
 func uiColor():
 	if player.status.Actual_Status == 0:

@@ -177,3 +177,10 @@ texture_progress = SubResource("AtlasTexture_ptt8g")
 texture_progress_offset = Vector2(1.22, 2)
 script = ExtResource("8_uihjh")
 enemy = NodePath("../..")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -80.0
+offset_right = 24.0
+offset_bottom = -57.0
+text = "12"
