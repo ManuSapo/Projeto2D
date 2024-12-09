@@ -24,6 +24,7 @@ func _ready():
 	
 @warning_ignore("unused_parameter")
 func _process(delta):
+	uiColor()
 	if canMove:
 		_movement(delta)
 	
