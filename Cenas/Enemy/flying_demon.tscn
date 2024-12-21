@@ -155,10 +155,19 @@ script = ExtResource("8_utj03")
 enemy = NodePath("../..")
 
 [node name="Label" type="Label" parent="."]
+modulate = Color(1, 0, 0, 1)
 offset_left = -16.0
 offset_top = -80.0
 offset_right = 24.0
 offset_bottom = -57.0
 text = "12"
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 3.0
+offset_right = 46.0
+offset_bottom = 21.0
+color = Color(0, 0, 0, 0.227451)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

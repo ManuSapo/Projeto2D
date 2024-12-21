@@ -55,7 +55,7 @@ func _useSkill():
 			print(actualEnemy.name)
 			print(enemyStats.health)
 			player.status.statusDamages()
-			changeStatus()
+			changeStatus() 
 		elif actualSkill.skill_type == 1:
 			var healGiven: int
 			healGiven = (actualSkill.Damage + player.status.defense * 0.66)
