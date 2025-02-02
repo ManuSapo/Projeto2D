@@ -7,6 +7,7 @@ var direction: String = "down"
 @export var isRunning: bool = false
 @export var status: StatusPlayer = StatusPlayer.new()
 @export var skills: SkillsPlayer = SkillsPlayer.new()
+@export var inventory: Inventory = Inventory.new()
 var oldSpeed: int = 50
 
 @onready var camera = $Camera2D
