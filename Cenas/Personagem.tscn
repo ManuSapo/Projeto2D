@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://0of2t1bcmgpj"]
+[gd_scene load_steps=93 format=3 uid="uid://0of2t1bcmgpj"]
 
 [ext_resource type="Script" path="res://Cenas/Personagem.gd" id="1_10i7r"]
 [ext_resource type="Texture2D" uid="uid://yhwurw8kq3dy" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_idle_anim_16x16.png" id="1_ns7mu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1dmvb0qtfw41" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_run_16x16.png" id="2_lcxhc"]
 [ext_resource type="Resource" uid="uid://6isatp3f8kcj" path="res://Cenas/PersonagemSkills.tres" id="3_daho1"]
 [ext_resource type="Script" path="res://Inventory/inventory_ui.gd" id="4_4hfay"]
+[ext_resource type="Script" path="res://Inventory/inventoryItem.gd" id="4_6xkj8"]
 [ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="4_10nln"]
 [ext_resource type="Script" path="res://Cenas/HealthBar.gd" id="4_fh8hf"]
 [ext_resource type="Script" path="res://Scripts/CameraPosition.gd" id="6_lwkjg"]
@@ -38,9 +39,17 @@ temp_attack = 10
 temp_defense = 5
 temp_speed = 10
 
+[sub_resource type="Resource" id="Resource_pe001"]
+script = ExtResource("4_6xkj8")
+name = "Apple"
+shopDescription = "The apple is a very good item because it heals you"
+generalDescription = "The apple can be found lero lero"
+effectDescription = "Apple heals you by x percent"
+
 [sub_resource type="Resource" id="Resource_itdcf"]
 script = ExtResource("4_4hfay")
-ActualInventory = 1
+actual_inventory = 1
+allItens = SubResource("Resource_pe001")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygr6s"]
 atlas = ExtResource("4_10nln")
