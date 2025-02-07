@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://njcp8pu0u0l3"]
+
+[ext_resource type="Script" path="res://Scripts/ItemBase.gd" id="1_uqafs"]
+[ext_resource type="Texture2D" uid="uid://bet0vrb07rkt4" path="res://Assets Visuais/Itens/Kyrise's 16x16 RPG Icon Pack - V1.3/sample.png" id="2_afjha"]
+[ext_resource type="Script" path="res://Inventory/inventoryItem.gd" id="3_x8ljn"]
+[ext_resource type="Texture2D" uid="uid://cq7ppuar230fn" path="res://Assets Visuais/Itens/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/fruit_01a.png" id="4_wnddr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udpek"]
+atlas = ExtResource("2_afjha")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rck5k"]
+atlas = ExtResource("2_afjha")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="Resource" id="Resource_fl77e"]
+script = ExtResource("3_x8ljn")
+name = "Apple"
+invSprite = SubResource("AtlasTexture_udpek")
+worldSprite = SubResource("AtlasTexture_rck5k")
+shopDescription = "The shop description"
+generalDescription = "The general description"
+effectDescription = "The effect description"
+
+[node name="ItemBase" type="Node2D"]
+script = ExtResource("1_uqafs")
+itemScript = SubResource("Resource_fl77e")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_wnddr")

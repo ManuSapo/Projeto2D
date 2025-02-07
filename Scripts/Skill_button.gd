@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	set_skill()
 	
-	
+
 func set_skill():
 	icon = skill.icon
 	if !icon:

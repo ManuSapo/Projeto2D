@@ -65,4 +65,8 @@ texture_progress_offset = Vector2(1.22, 2)
 script = ExtResource("3_a31gp")
 enemy = NodePath("../..")
 
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

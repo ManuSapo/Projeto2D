@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dmewwdu7pdhn8"]
+[gd_scene load_steps=33 format=4 uid="uid://dmewwdu7pdhn8"]
 
 [ext_resource type="Texture2D" uid="uid://j2b8d4oko84l" path="res://Assets Visuais/Cenário/AdventureBegins_Demo.png" id="1_dvy84"]
 [ext_resource type="Script" path="res://Scripts/BaseGeral.gd" id="1_ujd83"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://drqxy56mh6rcj" path="res://Assets Visuais/Cenário/Sprout Tiles/Tilled_Dirt_Wide.png" id="10_3eeay"]
 [ext_resource type="Texture2D" uid="uid://d4dnpkwquw8n0" path="res://Assets Visuais/Cenário/Sprout Tiles/Tilled_Dirt_Wide_v2.png" id="11_ueqel"]
 [ext_resource type="Texture2D" uid="uid://dkec0ehxwuour" path="res://Assets Visuais/Cenário/Sprout Tiles/Water.png" id="12_qk2dr"]
+[ext_resource type="PackedScene" uid="uid://njcp8pu0u0l3" path="res://Cenas/Itens/apple.tscn" id="18_hn803"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ju5ye"]
 texture = ExtResource("1_dvy84")
@@ -1179,6 +1180,11 @@ speed = 7.0
 position = Vector2(258, 144)
 status = SubResource("Resource_2isds")
 speed = 5.0
+
+[node name="Itens" type="Node" parent="."]
+
+[node name="apple" parent="Itens" instance=ExtResource("18_hn803")]
+position = Vector2(170, 28)
 
 [connection signal="moveEverything" from="Personagem" to="." method="_on_personagem_move_everything"]
 [connection signal="stopEverything" from="Personagem" to="." method="_on_personagem_stop_everything"]
