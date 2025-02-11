@@ -1,36 +1,65 @@
-[gd_scene load_steps=8 format=3 uid="uid://njcp8pu0u0l3"]
+[gd_scene load_steps=8 format=3 uid="uid://ctdhpxuu5wmra"]
 
 [ext_resource type="Script" path="res://Scripts/ItemBase.gd" id="1_uqafs"]
 [ext_resource type="Texture2D" uid="uid://bet0vrb07rkt4" path="res://Assets Visuais/Itens/Kyrise's 16x16 RPG Icon Pack - V1.3/sample.png" id="2_afjha"]
 [ext_resource type="Script" path="res://Inventory/inventoryItem.gd" id="3_x8ljn"]
-[ext_resource type="Texture2D" uid="uid://cq7ppuar230fn" path="res://Assets Visuais/Itens/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/fruit_01a.png" id="4_wnddr"]
+[ext_resource type="Texture2D" uid="uid://rg0ibhok67bl" path="res://Assets Visuais/Itens/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/32x32/fruit_01a.png" id="4_f8mdx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udpek"]
 atlas = ExtResource("2_afjha")
 region = Rect2(96, 288, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rck5k"]
-atlas = ExtResource("2_afjha")
-region = Rect2(96, 288, 32, 32)
-
 [sub_resource type="Resource" id="Resource_fl77e"]
 script = ExtResource("3_x8ljn")
-name = "Apple"
+name = "Empty"
 invSprite = SubResource("AtlasTexture_udpek")
-worldSprite = SubResource("AtlasTexture_rck5k")
 shopDescription = "The shop description"
 generalDescription = "The general description"
 effectDescription = "The effect description"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltlgr"]
+size = Vector2(48, 48)
 
 [node name="ItemBase" type="Node2D"]
 script = ExtResource("1_uqafs")
 itemScript = SubResource("Resource_fl77e")
 
 [node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("4_wnddr")
+[node name="TextureRect" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_f8mdx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ltlgr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
