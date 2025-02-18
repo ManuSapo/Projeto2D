@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillsPlayer" load_steps=8 format=3 uid="uid://6isatp3f8kcj"]
 
-[ext_resource type="Script" path="res://Scripts/SkillsPlayer.gd" id="1_fhp72"]
-[ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="2_pcsai"]
+[ext_resource type="Script" uid="uid://6qfa7mab8xfu" path="res://Scripts/SkillsPlayer.gd" id="1_fhp72"]
+[ext_resource type="Script" uid="uid://dfv20kgl8ml5a" path="res://Scripts/SkillObjectBase.gd" id="2_pcsai"]
 [ext_resource type="Resource" uid="uid://ehx10mpb8auk" path="res://Skills Resources/Skills/Shoot.tres" id="3_jyikd"]
 [ext_resource type="Texture2D" uid="uid://cilndxs1tnkgq" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_22.png" id="4_v6qbn"]
 

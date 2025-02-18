@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=4 uid="uid://dmewwdu7pdhn8"]
 
 [ext_resource type="Texture2D" uid="uid://j2b8d4oko84l" path="res://Assets Visuais/Cenário/AdventureBegins_Demo.png" id="1_dvy84"]
-[ext_resource type="Script" path="res://Scripts/BaseGeral.gd" id="1_ujd83"]
+[ext_resource type="Script" uid="uid://b4govbqr6rf0r" path="res://Scripts/BaseGeral.gd" id="1_ujd83"]
 [ext_resource type="Texture2D" uid="uid://dpsrr7yoldv82" path="res://Assets Visuais/Cenário/Sprout Tiles/Grass.png" id="2_ubqpo"]
 [ext_resource type="PackedScene" uid="uid://0of2t1bcmgpj" path="res://Cenas/Personagem.tscn" id="2_ysl6x"]
 [ext_resource type="Texture2D" uid="uid://cvwcndaqc1txj" path="res://Assets Visuais/Cenário/Sprout Tiles/Wooden_House_Roof_Tilset.png" id="3_bkxl5"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://doissi27dd54v" path="res://Assets Visuais/Cenário/Sprout Tiles/Wooden_House_Walls_Tilset.png" id="4_5lfva"]
 [ext_resource type="PackedScene" uid="uid://btguhg0x5xppn" path="res://Cenas/Enemy/Mushroom.tscn" id="4_h1guf"]
 [ext_resource type="Texture2D" uid="uid://cg4xlqn54g1il" path="res://Assets Visuais/Cenário/Sprout Tiles/Doors.png" id="5_5umy7"]
-[ext_resource type="Script" path="res://Scripts/StatusEnemy.gd" id="5_m2qfx"]
+[ext_resource type="Script" uid="uid://d1j4uscppypmg" path="res://Scripts/StatusEnemy.gd" id="5_m2qfx"]
 [ext_resource type="Texture2D" uid="uid://dnfqlreslvilg" path="res://Assets Visuais/Cenário/Sprout Tiles/Fences.png" id="6_o855m"]
 [ext_resource type="Texture2D" uid="uid://ba0uw43gjv4w0" path="res://Assets Visuais/Cenário/Sprout Tiles/Hills.png" id="7_nmsuu"]
 [ext_resource type="Texture2D" uid="uid://88giy1n650jf" path="res://Assets Visuais/Cenário/Sprout Tiles/Tilled_Dirt.png" id="8_nhqto"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://drqxy56mh6rcj" path="res://Assets Visuais/Cenário/Sprout Tiles/Tilled_Dirt_Wide.png" id="10_3eeay"]
 [ext_resource type="Texture2D" uid="uid://d4dnpkwquw8n0" path="res://Assets Visuais/Cenário/Sprout Tiles/Tilled_Dirt_Wide_v2.png" id="11_ueqel"]
 [ext_resource type="Texture2D" uid="uid://dkec0ehxwuour" path="res://Assets Visuais/Cenário/Sprout Tiles/Water.png" id="12_qk2dr"]
-[ext_resource type="PackedScene" uid="uid://njcp8pu0u0l3" path="res://Cenas/Itens/apple.tscn" id="18_hn803"]
+[ext_resource type="PackedScene" uid="uid://ctdhpxuu5wmra" path="res://Cenas/Itens/apple.tscn" id="18_hn803"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ju5ye"]
 texture = ExtResource("1_dvy84")

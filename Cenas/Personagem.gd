@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+#region Var
+
 var canMove: bool
 var direction: String = "down"
 
@@ -9,6 +11,9 @@ var direction: String = "down"
 @export var skills: SkillsPlayer = SkillsPlayer.new()
 @export var inventory: Inventory = Inventory.new()
 var oldSpeed: int = 50
+#endregion
+
+#region On Ready
 
 @onready var camera = $Camera2D
 @onready var enemy = get_node("/root/Geral/Enemies/FlyingDemon")
@@ -21,6 +26,9 @@ var oldSpeed: int = 50
 @onready var dummy = $DummyCharacter
 @onready var buttons = $Camera2D/FightUI/LayoutUI/FightButtons
 @onready var Fight = $Fight
+#endregion
+
+#region Signals
 
 signal healthChanged
 @warning_ignore("unused_signal")
@@ -31,6 +39,7 @@ signal enemyContact(collider_scene)
 signal fightCalled
 signal stopEverything
 signal moveEverything
+#endregion
 
 
 func _ready():
@@ -173,6 +182,8 @@ func endTurn():
 	buttons.hide()
 	print("turno acabou")
 
+func player():
+	pass
 
 func _on_detection_body_entered(body):
 	if body.has_method("_enemy"):
