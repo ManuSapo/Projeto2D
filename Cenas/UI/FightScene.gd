@@ -80,10 +80,13 @@ func _calculating():
 
 func changeStatus():
 	if actualSkill.status_type == 1:
+		@warning_ignore("int_as_enum_without_cast")
 		Actual_Status = 1
 	elif actualSkill.status_type == 2: 
+		@warning_ignore("int_as_enum_without_cast")
 		Actual_Status = 2
 	elif actualSkill.status_type == 3: 
+		@warning_ignore("int_as_enum_without_cast")
 		Actual_Status = 3
 	
 	

@@ -187,6 +187,14 @@ func player():
 
 func _on_detection_body_entered(body):
 	if body.has_method("_enemy"):
+		print("o inimigo é " + body.name)
 		_enemyFight()
 		GameManager.Enemy(body)
 		Fight.enemyStatus(body)
+	elif body.has_method("item"):
+		print("o item é " + body.name)
+		if Input.is_action_just_pressed("interact"):
+			body.interaction()
+		
+		
+		pass
