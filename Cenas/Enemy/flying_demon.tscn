@@ -1,13 +1,13 @@
 [gd_scene load_steps=21 format=3 uid="uid://chvp1l818h8xa"]
 
 [ext_resource type="Texture2D" uid="uid://fbdacwt30hmx" path="res://Assets Visuais/Personagem/Inimigos/Flying Demon 2D Pixel Art/Sprites/with_outline/IDLE.png" id="1_5tvuk"]
-[ext_resource type="Script" path="res://Cenas/Enemy/EnemyMovement.gd" id="1_4552j"]
-[ext_resource type="Script" path="res://Scripts/StatusEnemy.gd" id="2_g2m3s"]
-[ext_resource type="Script" path="res://Scripts/SkillsEnemy.gd" id="3_1iqjn"]
+[ext_resource type="Script" uid="uid://db0wjbuertic8" path="res://Cenas/Enemy/EnemyMovement.gd" id="1_4552j"]
+[ext_resource type="Script" uid="uid://d1j4uscppypmg" path="res://Scripts/StatusEnemy.gd" id="2_g2m3s"]
+[ext_resource type="Script" uid="uid://c6j20ydrr7yhp" path="res://Scripts/SkillsEnemy.gd" id="3_1iqjn"]
 [ext_resource type="Texture2D" uid="uid://tmhl2j8xrtmu" path="res://Assets Visuais/UI/power icons/Buffs/critical_boost.png" id="4_igt7q"]
-[ext_resource type="Script" path="res://Scripts/SkillObjectBase.gd" id="5_ewh3f"]
+[ext_resource type="Script" uid="uid://dfv20kgl8ml5a" path="res://Scripts/SkillObjectBase.gd" id="5_ewh3f"]
 [ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="7_rlkll"]
-[ext_resource type="Script" path="res://EHealthBar.gd" id="8_utj03"]
+[ext_resource type="Script" uid="uid://dkv7jxexpras7" path="res://EHealthBar.gd" id="8_utj03"]
 
 [sub_resource type="Resource" id="Resource_skaet"]
 script = ExtResource("2_g2m3s")
