@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dmewwdu7pdhn8"]
+[gd_scene load_steps=9 format=4 uid="uid://dmewwdu7pdhn8"]
 
 [ext_resource type="Script" uid="uid://b4govbqr6rf0r" path="res://Scripts/BaseGeral.gd" id="1_ujd83"]
 [ext_resource type="TileSet" uid="uid://c2wvwgfrf2qmx" path="res://Assets Visuais/Base Geral.tres" id="2_gjtjl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chvp1l818h8xa" path="res://Cenas/Enemy/flying_demon.tscn" id="3_ucov2"]
 [ext_resource type="PackedScene" uid="uid://btguhg0x5xppn" path="res://Cenas/Enemy/Mushroom.tscn" id="4_h1guf"]
 [ext_resource type="Script" uid="uid://d1j4uscppypmg" path="res://Scripts/StatusEnemy.gd" id="5_m2qfx"]
+[ext_resource type="PackedScene" uid="uid://bstcpc334026e" path="res://Cenas/Itens/apple.tscn" id="7_4x2ps"]
 
 [sub_resource type="Resource" id="Resource_2isds"]
 script = ExtResource("5_m2qfx")
@@ -63,6 +64,9 @@ status = SubResource("Resource_2isds")
 speed = 5.0
 
 [node name="Itens" type="Node" parent="."]
+
+[node name="ItemBase" parent="Itens" instance=ExtResource("7_4x2ps")]
+position = Vector2(-39, 51)
 
 [connection signal="moveEverything" from="Personagem" to="." method="_on_personagem_move_everything"]
 [connection signal="stopEverything" from="Personagem" to="." method="_on_personagem_stop_everything"]

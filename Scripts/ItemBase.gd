@@ -17,7 +17,13 @@ func onStart():
 	
 
 func interaction():
+	print("aboboda")
 	queue_free()
 
 func item():
 	pass
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print(body.name)
+	pass # Replace with function body.

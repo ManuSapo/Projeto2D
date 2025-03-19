@@ -35,7 +35,7 @@ func _movement(delta):
 	@warning_ignore("shadowed_variable_base_class")
 	var velocity = direction * speed * delta
 	var collision = move_and_collide(velocity)
-	if  collision:
+	if  collision:  
 		if canCollide:
 			changeDirection()
 			speed = speed * 1.1

@@ -191,10 +191,14 @@ func _on_detection_body_entered(body):
 		_enemyFight()
 		GameManager.Enemy(body)
 		Fight.enemyStatus(body)
-	elif body.has_method("item"):
+	
+	print("o body é " + body.name)
+
+
+func _on_interaction_body_entered(body: Node2D) -> void:
+	
+	print("o item é " + body.name)
+	if body.has_method("item"):
 		print("o item é " + body.name)
 		if Input.is_action_just_pressed("interact"):
 			body.interaction()
-		
-		
-		pass
