@@ -5,19 +5,23 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j066"]
 resource_local_to_scene = true
-size = Vector2(32, 32)
+size = Vector2(15, 16)
 
 [node name="ItemBase" instance=ExtResource("1_5j066")]
 
 [node name="TextureRect" parent="Control" index="0"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 texture = ExtResource("2_bxe47")
 stretch_mode = 3
 
 [node name="Area2D" parent="." index="1"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_5j066")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

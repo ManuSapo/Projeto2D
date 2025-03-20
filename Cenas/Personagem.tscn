@@ -610,7 +610,6 @@ texture_progress_offset = Vector2(1.2, 2)
 script = ExtResource("6_qqbhs")
 
 [node name="FightUI" type="Control" parent="Camera2D"]
-modulate = Color(0, 0.839216, 1, 1)
 layout_mode = 3
 anchors_preset = 0
 offset_left = -144.0
@@ -774,7 +773,7 @@ animation = &"Walking-Front"
 autoplay = "Idle-Front"
 
 [node name="Detection" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 3
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
@@ -789,16 +788,12 @@ texture = SubResource("AtlasTexture_hj15s")
 
 [node name="Fight" parent="." instance=ExtResource("21_adydj")]
 
-[node name="Interaction" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="Personal_Colision" type="CollisionShape2D" parent="Interaction"]
+[node name="Personal_Colision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_88w0w")
 
-[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Fight" method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Fight" method="_on_fight_pressed"]
@@ -816,4 +811,3 @@ shape = SubResource("RectangleShape2D_88w0w")
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons/Skill8" to="Fight" method="_on_skill_8_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons/Skill9" to="Fight" method="_on_skill_9_pressed"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
-[connection signal="body_entered" from="Interaction" to="." method="_on_interaction_body_entered"]
