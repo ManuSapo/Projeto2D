@@ -195,7 +195,7 @@ func _on_detection_body_entered(body):
 	print("o body é " + body.name)
 
 
-func _on_interaction_body_entered(body: Node2D) -> void:
+func _on_interaction_body_entered(body):
 	
 	print("o item é " + body.name)
 	if body.has_method("item"):
