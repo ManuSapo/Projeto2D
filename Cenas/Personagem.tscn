@@ -610,6 +610,7 @@ texture_progress_offset = Vector2(1.2, 2)
 script = ExtResource("6_qqbhs")
 
 [node name="FightUI" type="Control" parent="Camera2D"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -144.0
@@ -792,8 +793,8 @@ texture = SubResource("AtlasTexture_hj15s")
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_88w0w")
 
-[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Fight" method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Fight" method="_on_fight_pressed"]
