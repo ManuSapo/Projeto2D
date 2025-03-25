@@ -43,7 +43,7 @@ signal stopEverything
 signal moveEverything
 #endregion
 
-
+#region Basic Functions
 func _ready():
 	canMove = true
 	overworldBars.show() 
@@ -57,6 +57,8 @@ func _process(delta):
 	if canMove:
 		_movement(delta)
 		_running()
+
+
 
 func onlyOnce():
 	oldSpeed = status.speed
@@ -74,7 +76,9 @@ func _sideThings():
 	_damageMe()
 	_healMe()
 
+#endregion
 
+#region Movement Related
 #lida com a movimentação básica
 func _movement(delta):
 	@warning_ignore("shadowed_variable_base_class")
@@ -143,6 +147,10 @@ func _animation():
 			"left":
 				animated_sprite.play("Walking-Left")
 
+#endregion
+
+#region damage or fight functions
+
 func _damageMe():
 	if Input.is_action_just_pressed("interact"):
 		healthChanged.emit()
@@ -195,9 +203,8 @@ func _on_detection_body_entered(body):
 		_enemyFight()
 		GameManager.Enemy(body)
 		Fight.enemyStatus(body)
-	
-	print("o body é " + body.name)
 
+#endregion
 
 func _on_interaction_body_entered(body):
 	
@@ -205,7 +212,7 @@ func _on_interaction_body_entered(body):
 	if body.has_method("item"):
 		print("o item é " + body.name)
 		if Input.is_action_just_pressed("interact"):
-			body.interaction()
+			body.collect(inventory)
 
 func moveSet():
 	if canMove == true:

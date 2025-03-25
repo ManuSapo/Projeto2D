@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=5 format=3 uid="uid://duig3x6i2cmqw"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://duig3x6i2cmqw"]
 
 [ext_resource type="Script" uid="uid://cov73dujauewj" path="res://Inventory/inventoryItem.gd" id="1_auff3"]
-[ext_resource type="Resource" uid="uid://codlg6vjgv61u" path="res://Inventory/Items Resources/apple.tres" id="2_h5smb"]
-[ext_resource type="Resource" uid="uid://b3c7jypl3pfhr" path="res://Inventory/Items Resources/gift.tres" id="3_h5smb"]
 [ext_resource type="Script" uid="uid://bgcsceuuk3hvn" path="res://Inventory/inventory_ui.gd" id="3_vw4as"]
 
 [resource]
 script = ExtResource("3_vw4as")
 actual_inventory = 1
-items = Array[ExtResource("1_auff3")]([ExtResource("2_h5smb"), null, ExtResource("2_h5smb"), null, ExtResource("3_h5smb"), null, null, null, null, null, null, null, null, null, null, null, null, null])
+items = Array[ExtResource("1_auff3")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://bgcsceuuk3hvn"

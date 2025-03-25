@@ -6,3 +6,9 @@ class_name Inventory
 
 
 enum inventoryType { empty, player, npc, enemy, chest, reward }
+
+func insert(item: Inventory_Item):
+	for i in range(items.size()):
+		if !items[i]:
+			items[i] = item
+			break

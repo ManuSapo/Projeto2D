@@ -15,15 +15,15 @@ func onStart():
 	pass
 	
 
-func interaction():
-	print("aboboda")
-	queue_free()
 
 func item():
 	pass
 
 
+@warning_ignore("unused_parameter")
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body.name)
+	collect(GameManager.player.inventory)
+
+func collect(inventory: Inventory):
+	inventory.insert(itemScript)
 	queue_free()
-	pass # Replace with function body.
