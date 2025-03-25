@@ -202,3 +202,9 @@ func _on_interaction_body_entered(body):
 		print("o item é " + body.name)
 		if Input.is_action_just_pressed("interact"):
 			body.interaction()
+
+func moveSet():
+	if canMove == true:
+		canMove = false
+	else:
+		canMove = true

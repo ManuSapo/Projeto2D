@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqg63qolme1wi"]
+
+[ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_n0421"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35fg5"]
+atlas = ExtResource("1_n0421")
+region = Rect2(304, 688, 16, 32)
+
+[node name="Panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(20, 20)
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_35fg5")
+vframes = 2
