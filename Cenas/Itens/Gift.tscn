@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://clf7pdt33pho4"]
+
+[ext_resource type="PackedScene" uid="uid://dry271q6x3jag" path="res://Cenas/Itens/item_base.tscn" id="1_rugaf"]
+[ext_resource type="Resource" uid="uid://b3c7jypl3pfhr" path="res://Inventory/Items Resources/gift.tres" id="2_r84la"]
+[ext_resource type="Texture2D" uid="uid://dh2ni6j8lucxn" path="res://Assets Visuais/Itens/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/32x32/gift_01d.png" id="3_j74xh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxrob"]
+resource_local_to_scene = true
+size = Vector2(48, 48)
+
+[node name="ItemBase" instance=ExtResource("1_rugaf")]
+itemScript = ExtResource("2_r84la")
+
+[node name="TextureRect" parent="Control" index="0"]
+texture = ExtResource("3_j74xh")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_nxrob")

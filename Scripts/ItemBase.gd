@@ -11,8 +11,7 @@ func _ready():
 	onStart()
 
 
-func onStart():
-	
+func onStart(): 
 	pass
 	
 

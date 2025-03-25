@@ -18,3 +18,11 @@ func _on_personagem_stop_everything() -> void:
 
 func _on_personagem_move_everything() -> void:
 	pass
+
+
+func _on_inventory_ui_opened() -> void:
+	get_tree().paused = true
+
+
+func _on_inventory_ui_closed() -> void:
+	get_tree().paused = false

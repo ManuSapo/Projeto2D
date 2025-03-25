@@ -33,3 +33,4 @@ func moveController():
 	var enemysOnScene = enemies.get_children()
 	for child in enemysOnScene:
 		child.changeMove()
+		

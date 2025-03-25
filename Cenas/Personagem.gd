@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 var canMove: bool
 var direction: String = "down"
+var isBarShowing: bool = true
 
 @export var isMoving: bool = false
 @export var isRunning: bool = false
@@ -26,6 +27,7 @@ var oldSpeed: int = 50
 @onready var dummy = $DummyCharacter
 @onready var buttons = $Camera2D/FightUI/LayoutUI/FightButtons
 @onready var Fight = $Fight
+@onready var playerInventory: Inventory = preload("res://Inventory/Inventory Resources/PlayerInventory.tres")
 #endregion
 
 #region Signals
@@ -159,6 +161,7 @@ func _enemyFight():
 	if canMove:
 		fightCalled.emit(true)
 		overworldBars.hide()
+		isBarShowing = false
 		fightUI.show()
 		stopEverything.emit()
 		canMove = false
@@ -167,6 +170,7 @@ func _enemyFight():
 		fightCalled.emit(false)
 		fightUI.hide()
 		overworldBars.show()
+		isBarShowing = true
 		moveEverything.emit()
 		canMove = true
 		return
@@ -206,5 +210,17 @@ func _on_interaction_body_entered(body):
 func moveSet():
 	if canMove == true:
 		canMove = false
+		return
 	else:
 		canMove = true
+		return
+
+func hideOrShow():
+	if isBarShowing == true:
+		overworldBars.hide()
+		isBarShowing = false
+		return
+	else:
+		overworldBars.show()
+		isBarShowing = true
+		return

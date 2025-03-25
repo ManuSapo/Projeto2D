@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dmewwdu7pdhn8"]
+[gd_scene load_steps=11 format=4 uid="uid://dmewwdu7pdhn8"]
 
 [ext_resource type="Script" uid="uid://b4govbqr6rf0r" path="res://Scripts/BaseGeral.gd" id="1_ujd83"]
 [ext_resource type="TileSet" uid="uid://c2wvwgfrf2qmx" path="res://Assets Visuais/Base Geral.tres" id="2_gjtjl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chvp1l818h8xa" path="res://Cenas/Enemy/flying_demon.tscn" id="3_ucov2"]
 [ext_resource type="PackedScene" uid="uid://btguhg0x5xppn" path="res://Cenas/Enemy/Mushroom.tscn" id="4_h1guf"]
 [ext_resource type="Script" uid="uid://d1j4uscppypmg" path="res://Scripts/StatusEnemy.gd" id="5_m2qfx"]
+[ext_resource type="Script" uid="uid://cjwtt6nkkth43" path="res://Cenas/enemies.gd" id="5_pvpuo"]
 [ext_resource type="PackedScene" uid="uid://bstcpc334026e" path="res://Cenas/Itens/apple.tscn" id="7_4x2ps"]
 [ext_resource type="PackedScene" uid="uid://cmsoevvcxytju" path="res://Inventory/inventory_ui.tscn" id="8_6rcce"]
 
@@ -58,11 +59,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = -88.0
+offset_top = -48.0
+offset_right = 88.0
+offset_bottom = 48.0
 
 [node name="Enemies" type="Node" parent="."]
 process_mode = 1
+script = ExtResource("5_pvpuo")
 
 [node name="FlyingDemon" parent="Enemies" instance=ExtResource("3_ucov2")]
 position = Vector2(22, 76)
@@ -81,3 +85,5 @@ position = Vector2(-39, 51)
 
 [connection signal="moveEverything" from="Personagem" to="." method="_on_personagem_move_everything"]
 [connection signal="stopEverything" from="Personagem" to="." method="_on_personagem_stop_everything"]
+[connection signal="closed" from="Personagem/InventoryUI" to="." method="_on_inventory_ui_closed"]
+[connection signal="opened" from="Personagem/InventoryUI" to="." method="_on_inventory_ui_opened"]

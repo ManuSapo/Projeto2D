@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Inventory_Item" load_steps=3 format=3 uid="uid://b3c7jypl3pfhr"]
+
+[ext_resource type="Script" uid="uid://cov73dujauewj" path="res://Inventory/inventoryItem.gd" id="1_38iq2"]
+[ext_resource type="Texture2D" uid="uid://mpbalxqxrn1b" path="res://Assets Visuais/Itens/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/gift_01d.png" id="2_38iq2"]
+
+[resource]
+script = ExtResource("1_38iq2")
+name = "Gift"
+texture = ExtResource("2_38iq2")
+shopDescription = "The shop description"
+generalDescription = "The general description"
+effectDescription = "The effect description"
+metadata/_custom_type_script = "uid://cov73dujauewj"

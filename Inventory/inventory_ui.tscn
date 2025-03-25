@@ -1,31 +1,135 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmsoevvcxytju"]
+[gd_scene load_steps=6 format=3 uid="uid://cmsoevvcxytju"]
 
 [ext_resource type="Script" uid="uid://cykgvybpo1byx" path="res://Inventory/InventoryFunctions.gd" id="1_o6avf"]
+[ext_resource type="Resource" uid="uid://duig3x6i2cmqw" path="res://Inventory/Inventory Resources/PlayerInventory.tres" id="2_n0pvb"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="2_o6avf"]
+[ext_resource type="PackedScene" uid="uid://bqg63qolme1wi" path="res://Inventory/inventory_Slot.tscn" id="3_6gduq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6gduq"]
 atlas = ExtResource("2_o6avf")
 region = Rect2(40, 488, 64, 64)
 
 [node name="InventoryUI" type="Control"]
+custom_minimum_size = Vector2(192, 120)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1088.0
-offset_bottom = -584.0
+offset_right = -960.0
+offset_bottom = -528.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o6avf")
+inventoryResource = ExtResource("2_n0pvb")
 
 [node name="border" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("AtlasTexture_6gduq")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="border"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -48.0
+offset_right = 80.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 7
+
+[node name="Slot" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot2" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot3" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot4" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot5" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot6" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot7" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot8" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot9" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot10" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot11" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot12" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot13" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot14" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot15" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot16" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot17" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot18" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot19" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot20" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot21" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot22" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot23" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot24" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot25" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot26" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot27" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="Slot28" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2

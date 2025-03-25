@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqg63qolme1wi"]
+[gd_scene load_steps=4 format=3 uid="uid://bqg63qolme1wi"]
 
+[ext_resource type="Script" uid="uid://06fj61iwq131" path="res://Scripts/inventory_slot.gd" id="1_35fg5"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_n0421"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35fg5"]
@@ -8,11 +9,27 @@ region = Rect2(304, 688, 16, 32)
 
 [node name="Panel" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.031
+offset_right = 0.415998
+offset_bottom = -0.0880013
+script = ExtResource("1_35fg5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(20, 20)
-scale = Vector2(2.5, 2.5)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(10, 10)
+scale = Vector2(1.25, 1.25)
 texture = SubResource("AtlasTexture_35fg5")
 vframes = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
