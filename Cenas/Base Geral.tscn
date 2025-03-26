@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://dmewwdu7pdhn8"]
+[gd_scene load_steps=12 format=4 uid="uid://dmewwdu7pdhn8"]
 
 [ext_resource type="Script" uid="uid://b4govbqr6rf0r" path="res://Scripts/BaseGeral.gd" id="1_ujd83"]
 [ext_resource type="TileSet" uid="uid://c2wvwgfrf2qmx" path="res://Assets Visuais/Base Geral.tres" id="2_gjtjl"]
 [ext_resource type="PackedScene" uid="uid://0of2t1bcmgpj" path="res://Cenas/Personagem.tscn" id="2_ysl6x"]
+[ext_resource type="PackedScene" uid="uid://clf7pdt33pho4" path="res://Cenas/Itens/Gift.tscn" id="3_hb3uu"]
 [ext_resource type="PackedScene" uid="uid://chvp1l818h8xa" path="res://Cenas/Enemy/flying_demon.tscn" id="3_ucov2"]
 [ext_resource type="PackedScene" uid="uid://btguhg0x5xppn" path="res://Cenas/Enemy/Mushroom.tscn" id="4_h1guf"]
 [ext_resource type="Script" uid="uid://d1j4uscppypmg" path="res://Scripts/StatusEnemy.gd" id="5_m2qfx"]
@@ -54,6 +55,7 @@ process_mode = 3
 position = Vector2(-48, -48)
 
 [node name="InventoryUI" parent="Personagem" instance=ExtResource("8_6rcce")]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -82,6 +84,27 @@ speed = 5.0
 
 [node name="ItemBase" parent="Itens" instance=ExtResource("7_4x2ps")]
 position = Vector2(-39, 51)
+
+[node name="ItemBase2" parent="Itens" instance=ExtResource("7_4x2ps")]
+position = Vector2(-78, 102)
+
+[node name="ItemBase3" parent="Itens" instance=ExtResource("7_4x2ps")]
+position = Vector2(-116, 19)
+
+[node name="ItemBase4" parent="Itens" instance=ExtResource("7_4x2ps")]
+position = Vector2(-144, 72)
+
+[node name="ItemBase5" parent="Itens" instance=ExtResource("3_hb3uu")]
+position = Vector2(158, 28)
+
+[node name="ItemBase6" parent="Itens" instance=ExtResource("3_hb3uu")]
+position = Vector2(100, 128)
+
+[node name="ItemBase7" parent="Itens" instance=ExtResource("3_hb3uu")]
+position = Vector2(-178, -17)
+
+[node name="ItemBase8" parent="Itens" instance=ExtResource("3_hb3uu")]
+position = Vector2(27, -55)
 
 [connection signal="moveEverything" from="Personagem" to="." method="_on_personagem_move_everything"]
 [connection signal="stopEverything" from="Personagem" to="." method="_on_personagem_stop_everything"]

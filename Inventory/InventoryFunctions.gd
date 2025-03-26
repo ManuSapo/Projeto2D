@@ -42,3 +42,21 @@ func ShowOrHide():
 			GameManager.player.moveSet()
 			GameManager.player.hideOrShow()
 			opened.emit()
+			
+
+func ButtonShowHide():
+	if isShowing == true:
+		self.hide()
+		isShowing = false
+		GameManager.player.moveSet()
+		GameManager.player.hideOrShow()
+		closed.emit()
+	elif isShowing == false:
+		self.show()
+		isShowing = true
+		GameManager.player.moveSet()
+		GameManager.player.hideOrShow()
+		opened.emit()
+
+func _on_on_off_pressed():
+	ButtonShowHide()

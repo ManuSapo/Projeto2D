@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmsoevvcxytju"]
+[gd_scene load_steps=7 format=3 uid="uid://cmsoevvcxytju"]
 
 [ext_resource type="Script" uid="uid://cykgvybpo1byx" path="res://Inventory/InventoryFunctions.gd" id="1_o6avf"]
 [ext_resource type="Resource" uid="uid://duig3x6i2cmqw" path="res://Inventory/Inventory Resources/PlayerInventory.tres" id="2_n0pvb"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="2_o6avf"]
 [ext_resource type="PackedScene" uid="uid://bqg63qolme1wi" path="res://Inventory/inventory_Slot.tscn" id="3_6gduq"]
+[ext_resource type="PackedScene" uid="uid://capcbb2jvtfq3" path="res://Cenas/UI/On_Off_Button.tscn" id="5_jhqvo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0pvb"]
 atlas = ExtResource("2_o6avf")
 region = Rect2(32, 480, 80, 96)
 
 [node name="InventoryUI" type="Control"]
+z_index = 1
 custom_minimum_size = Vector2(264, 168)
 layout_mode = 3
 anchors_preset = 15
@@ -100,3 +102,12 @@ layout_mode = 2
 
 [node name="Panel21" parent="border/GridContainer" instance=ExtResource("3_6gduq")]
 layout_mode = 2
+
+[node name="OnOff" parent="border" instance=ExtResource("5_jhqvo")]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 148.0
+offset_right = 255.0
+offset_bottom = 164.0
+
+[connection signal="pressed" from="border/OnOff" to="." method="_on_on_off_pressed"]

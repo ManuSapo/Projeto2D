@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://derlblwtvpb4u" path="res://Assets Visuais/UI/GUI.png" id="1_auika"]
 [ext_resource type="Texture2D" uid="uid://b7m0a6elqjngg" path="res://Assets Visuais/UI/Icons/1 Icons/1/Skillicon1_10.png" id="2_x1n48"]
-[ext_resource type="Script" path="res://Scripts/Skill_button.gd" id="3_6sjnx"]
+[ext_resource type="Script" uid="uid://hssqokqhdc8g" path="res://Scripts/Skill_button.gd" id="3_6sjnx"]
 [ext_resource type="FontFile" uid="uid://qn0iv0rp48br" path="res://Assets Visuais/Fonts/monogram.ttf" id="4_rcbkp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8m1y0"]
@@ -51,7 +51,7 @@ modulate_color = Color(0.14902, 0.168627, 0.266667, 0.784314)
 [sub_resource type="Theme" id="Theme_bb8la"]
 Panel/styles/panel = SubResource("StyleBoxTexture_23bcs")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clfxp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p2sv"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -72,13 +72,13 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qi4sp"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxkan"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djdh2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cl4vp"]
 bg_color = Color(0.906328, 0.360942, 0.73812, 1)
 
 [sub_resource type="Theme" id="Theme_trdpx"]
@@ -103,9 +103,9 @@ RichTextLabel/constants/table_v_separation = 3
 RichTextLabel/constants/text_highlight_h_padding = 3
 RichTextLabel/constants/text_highlight_v_padding = 3
 RichTextLabel/font_sizes/mono_font_size = 16
-RichTextLabel/styles/focus = SubResource("StyleBoxFlat_clfxp")
-RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_qi4sp")
-RichTextLabel/styles/scroll = SubResource("StyleBoxFlat_djdh2")
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_1p2sv")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_wxkan")
+RichTextLabel/styles/scroll = SubResource("StyleBoxFlat_cl4vp")
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(32, 32)

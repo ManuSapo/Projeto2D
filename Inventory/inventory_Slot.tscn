@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqg63qolme1wi"]
+[gd_scene load_steps=8 format=3 uid="uid://bqg63qolme1wi"]
 
 [ext_resource type="Script" uid="uid://06fj61iwq131" path="res://Scripts/inventory_slot.gd" id="1_35fg5"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_n0421"]
 [ext_resource type="FontFile" uid="uid://51oq743yniu0" path="res://Assets Visuais/Fonts/ChicagoFLF.ttf" id="3_wut8a"]
+[ext_resource type="Theme" uid="uid://bh25p1autjn2m" path="res://Themes/inventory_Slot.tres" id="4_wm4p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wut8a"]
 atlas = ExtResource("1_n0421")
 region = Rect2(144, 752, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm4p5"]
+atlas = ExtResource("1_n0421")
+region = Rect2(208, 288, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p0sl"]
+atlas = ExtResource("1_n0421")
+region = Rect2(32, 608, 64, 64)
 
 [node name="Panel" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -42,14 +51,23 @@ layout_mode = 2
 
 [node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_right = 2.0
-offset_bottom = -12.0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = -8.0
+texture = SubResource("AtlasTexture_wm4p5")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.995
+offset_right = 16.0
+offset_bottom = 10.05
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.503219, 0.497649)
@@ -57,5 +75,47 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_wut8a")
 theme_override_font_sizes/font_size = 0
-text = "99"
-horizontal_alignment = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 4.0
+anchor_bottom = 2.0
+texture = SubResource("AtlasTexture_2p0sl")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_wm4p5")
+text = "This item is an item and you should think about the item and its an item, have i already sait it is an item? Im Putting this text so that i can test the sidebar trying to talk and read. Im just writhing anything so i can test this chat and i will just say a lot of thing in englishThis item is an item and you should think about the item and its an item, have i already sait it is an item? Im Putting this text so that i can test the sidebar trying to talk and read. Im just writhing anything so i can test this chat and i will just say a lot of thing in englishThis item is an item and you should think about the item and its an item, have i already sait it is an item? Im Putting this text so that i can test the sidebar trying to talk and read. Im just writhing anything so i can test this chat and i will just say a lot of thing in english"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 56.0
+theme = ExtResource("4_wm4p5")
+text = "Hi im just testing the text because i really need to do it"
+horizontal_alignment = 1
+vertical_alignment = 1

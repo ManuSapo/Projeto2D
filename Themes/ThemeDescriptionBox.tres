@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cvkbfwny01dse"]
+
+[ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_clwna"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_745j6"]
+atlas = ExtResource("1_clwna")
+region = Rect2(128, 480, 48, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_icw3r"]
+texture = SubResource("AtlasTexture_745j6")
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_icw3r")

@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=32 format=3 uid="uid://duig3x6i2cmqw"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=31 format=3 uid="uid://duig3x6i2cmqw"]
 
 [ext_resource type="Script" uid="uid://dq762kqn45vbd" path="res://Scripts/InventorySlot.gd" id="2_qnh08"]
-[ext_resource type="Resource" uid="uid://codlg6vjgv61u" path="res://Inventory/Items Resources/apple.tres" id="3_auff3"]
 [ext_resource type="Script" uid="uid://bgcsceuuk3hvn" path="res://Inventory/inventory_ui.gd" id="3_vw4as"]
 
 [sub_resource type="Resource" id="Resource_auff3"]
 script = ExtResource("2_qnh08")
-item = ExtResource("3_auff3")
 amount = 0
 metadata/_custom_type_script = "uid://dq762kqn45vbd"
 
