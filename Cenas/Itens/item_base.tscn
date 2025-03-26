@@ -21,7 +21,7 @@ script = ExtResource("1_okfpa")
 itemScript = SubResource("Resource_fl77e")
 
 [node name="Control" type="Control" parent="."]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(8, 8)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

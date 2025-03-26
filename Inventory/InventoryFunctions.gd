@@ -15,14 +15,15 @@ func _ready() -> void:
 	isShowing = false
 	self.hide()
 	update()
+	inventory.updated.connect(update)
 	
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	ShowOrHide()
 
 func update():
-	for i in range(min(inventory.items.size(), slots.size())):
-		slots[i].update(inventory.items[i])
+	for i in range(min(inventory.slots.size(), slots.size())):
+		slots[i].update(inventory.slots[i])
 
 
 

@@ -1,35 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqg63qolme1wi"]
+[gd_scene load_steps=5 format=3 uid="uid://bqg63qolme1wi"]
 
 [ext_resource type="Script" uid="uid://06fj61iwq131" path="res://Scripts/inventory_slot.gd" id="1_35fg5"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_n0421"]
+[ext_resource type="FontFile" uid="uid://51oq743yniu0" path="res://Assets Visuais/Fonts/ChicagoFLF.ttf" id="3_wut8a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_35fg5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wut8a"]
 atlas = ExtResource("1_n0421")
-region = Rect2(304, 688, 16, 32)
+region = Rect2(144, 752, 48, 24)
 
 [node name="Panel" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(24, 24)
+custom_minimum_size = Vector2(32, 32)
 anchors_preset = -1
-anchor_right = 0.017
-anchor_bottom = 0.031
-offset_right = 4.416
-offset_bottom = 3.912
+anchor_right = 0.028
+anchor_bottom = 0.049
+offset_right = -0.256001
+offset_bottom = 0.247999
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_35fg5")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(12, 12)
-scale = Vector2(1.5, 1.5)
-texture = SubResource("AtlasTexture_35fg5")
-vframes = 2
+position = Vector2(16, 16)
+scale = Vector2(1.33333, 1.33333)
+texture = SubResource("AtlasTexture_wut8a")
+hframes = 2
+frame = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
 
 [node name="Item" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = 2.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.503219, 0.497649)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_wut8a")
+theme_override_font_sizes/font_size = 0
+text = "99"
+horizontal_alignment = 2

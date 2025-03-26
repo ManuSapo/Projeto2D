@@ -12,10 +12,16 @@ size = Vector2(16, 16)
 itemScript = ExtResource("2_d2bm6")
 
 [node name="TextureRect" parent="Control" index="0"]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
+custom_minimum_size = Vector2(8, 8)
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 texture = ExtResource("2_bxe47")
 stretch_mode = 3
 
