@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://u3vtitvp5g4d"]
 
-[ext_resource type="Script" path="res://Cenas/UI/FightScene.gd" id="1_rog8c"]
+[ext_resource type="Script" uid="uid://b4wkbmyu0sh7u" path="res://Cenas/UI/FightScene.gd" id="1_rog8c"]
 
 [node name="Control" type="Control"]
 modulate = Color(1, 1, 1, 0.0431373)

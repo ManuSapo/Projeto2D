@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bwt7n2ttukal5"]
+
+[ext_resource type="Texture2D" uid="uid://c5uibcdkxipw6" path="res://Assets Visuais/UI/Steampunk UI.png" id="1_qdtou"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2fhj"]
+atlas = ExtResource("1_qdtou")
+region = Rect2(0, 0, 7, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d31y7"]
+texture = SubResource("AtlasTexture_h2fhj")
+modulate_color = Color(0.324591, 0.672877, 0.9924, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwoyn"]
+atlas = ExtResource("1_qdtou")
+region = Rect2(9, 0, 3, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07tdw"]
+texture = SubResource("AtlasTexture_xwoyn")
+texture_margin_left = 2.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
+modulate_color = Color(0.698039, 0.482353, 0.639216, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7v02"]
+
+[resource]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_d31y7")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_07tdw")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_g7v02")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://0of2t1bcmgpj"]
+[gd_scene load_steps=84 format=3 uid="uid://0of2t1bcmgpj"]
 
 [ext_resource type="Script" uid="uid://bc30bu2oaw4km" path="res://Cenas/Personagem.gd" id="1_10i7r"]
 [ext_resource type="Texture2D" uid="uid://yhwurw8kq3dy" path="res://Assets Visuais/Personagem/Modern Tiles/Amelia_idle_anim_16x16.png" id="1_ns7mu"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://be2yv7xapocl2" path="res://Scripts/CameraPosition.gd" id="6_lwkjg"]
 [ext_resource type="Script" uid="uid://b5adkq67tpr7y" path="res://Cenas/ManaBar.gd" id="6_qqbhs"]
 [ext_resource type="Script" uid="uid://c36oc1c1y5ahw" path="res://Cenas/ShieldBar.gd" id="8_e41ra"]
-[ext_resource type="Texture2D" uid="uid://c5uibcdkxipw6" path="res://Assets Visuais/UI/Steampunk UI.png" id="10_3i0a2"]
+[ext_resource type="Theme" uid="uid://bwt7n2ttukal5" path="res://Themes/Personagem.tres" id="11_d31y7"]
 [ext_resource type="PackedScene" uid="uid://b72re4dhnon65" path="res://Cenas/UI/TextButton.tscn" id="11_phosy"]
 [ext_resource type="PackedScene" uid="uid://bedy4ekkqekwe" path="res://Cenas/UI/SkillButton.tscn" id="12_2aa3t"]
 [ext_resource type="Texture2D" uid="uid://bi8pnctfha41p" path="res://Assets Visuais/Personagem/Modern Tiles/Adam_phone_16x16.png" id="12_q1whl"]
@@ -60,33 +60,6 @@ margin = Rect2(0, -1, 2, 3)
 atlas = ExtResource("4_10nln")
 region = Rect2(72, 6, 42, 3)
 margin = Rect2(0, 0, 0, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2fhj"]
-atlas = ExtResource("10_3i0a2")
-region = Rect2(0, 0, 7, 12)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pq7fq"]
-texture = SubResource("AtlasTexture_h2fhj")
-modulate_color = Color(0.324591, 0.672877, 0.9924, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwoyn"]
-atlas = ExtResource("10_3i0a2")
-region = Rect2(9, 0, 3, 30)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3qsx"]
-texture = SubResource("AtlasTexture_xwoyn")
-texture_margin_left = 2.0
-texture_margin_top = 1.0
-texture_margin_right = 2.0
-texture_margin_bottom = 1.0
-modulate_color = Color(0.698039, 0.482353, 0.639216, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2k0m"]
-
-[sub_resource type="Theme" id="Theme_k5dg8"]
-VScrollBar/styles/grabber = SubResource("StyleBoxTexture_pq7fq")
-VScrollBar/styles/scroll = SubResource("StyleBoxTexture_h3qsx")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_r2k0m")
 
 [sub_resource type="Resource" id="Resource_edgoi"]
 script = ExtResource("16_0jkny")
@@ -597,7 +570,6 @@ texture_progress_offset = Vector2(1.2, 2)
 script = ExtResource("6_qqbhs")
 
 [node name="FightUI" type="Control" parent="Camera2D"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -144.0
@@ -712,7 +684,7 @@ offset_left = -160.0
 offset_top = -12.0
 offset_right = -124.0
 offset_bottom = 93.0
-theme = SubResource("Theme_k5dg8")
+theme = ExtResource("11_d31y7")
 
 [node name="SkillsButtons" type="VBoxContainer" parent="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer"]
 custom_minimum_size = Vector2(24, 104)
@@ -780,8 +752,8 @@ texture = SubResource("AtlasTexture_hj15s")
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_88w0w")
 
-[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_back_pressed"]
+[connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Back" to="Fight" method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Camera2D/FightUI" method="_on_fight_pressed"]
 [connection signal="pressed" from="Camera2D/FightUI/LayoutUI/InitialButtons/HBoxContainer/Fight" to="Fight" method="_on_fight_pressed"]

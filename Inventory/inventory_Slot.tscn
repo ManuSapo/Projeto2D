@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqg63qolme1wi"]
+[gd_scene load_steps=9 format=3 uid="uid://bqg63qolme1wi"]
 
 [ext_resource type="Script" uid="uid://06fj61iwq131" path="res://Scripts/inventory_slot.gd" id="1_35fg5"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_n0421"]
 [ext_resource type="FontFile" uid="uid://51oq743yniu0" path="res://Assets Visuais/Fonts/ChicagoFLF.ttf" id="3_wut8a"]
+[ext_resource type="Theme" uid="uid://dmkxnx3wg7ofq" path="res://Themes/inventory_Slot.res" id="4_wm4p5"]
+[ext_resource type="Theme" uid="uid://bwt7n2ttukal5" path="res://Themes/Personagem.tres" id="4_x80ys"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wut8a"]
 atlas = ExtResource("1_n0421")
@@ -91,10 +93,17 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect"]
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 8.0
+offset_top = 11.0
 offset_right = 80.0
 offset_bottom = 56.0
-text = "assdahjasfdkhadfskj ashdkjlafsdhfas hsakjdfhsa kjlfhasd jklfash fjklsadhfkj lshlkjashfajklshf jksahjkl"
+theme = ExtResource("4_x80ys")
+
+[node name="Label" type="Label" parent="NinePatchRect/ScrollContainer"]
+custom_minimum_size = Vector2(64, 48)
+layout_mode = 2
+theme = ExtResource("4_wm4p5")
+text = "asdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf s asdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf sasdasfdsadfsadfasd sad fsad asd asd sad fsadf asd sad asdfsadf sad sad fsad sad sd sdf s"
+autowrap_mode = 1
