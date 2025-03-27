@@ -85,40 +85,12 @@ anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 4.0
 anchor_bottom = 2.0
+offset_right = -8.0
 texture = SubResource("AtlasTexture_2p0sl")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.083
-anchor_top = 0.125
-anchor_right = 0.917
-anchor_bottom = 0.875
-offset_left = 0.0319996
-offset_right = -0.0320053
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_wm4p5")
-text = "This item is an item and you should think about the item and its an item, have i already sait it is an item? Im Putting this text so that i can test the sidebar trying to talk and read. Im just writhing anything so i can test this chat and i will just say a lot of thing in englishThis item is an item and you should think about the item and its an item, have i already sait it is an item? Im Putting this text so that i can test the sidebar trying to talk and read. Im just writhing anything so i can test this chat and i will just say a lot of thing in englishThis item is an item and you should think about the item and its an item, have i already sait it is an item? Im Putting this text so that i can test the sidebar trying to talk and read. Im just writhing anything so i can test this chat and i will just say a lot of thing in english"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="NinePatchRect"]
-visible = false
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 88.0
-offset_bottom = 56.0
-theme = ExtResource("4_wm4p5")
-text = "Hi im just testing the text because i really need to do it"
-horizontal_alignment = 1
-vertical_alignment = 1
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect"]
 visible = false
@@ -129,3 +101,12 @@ offset_right = 88.0
 offset_bottom = 56.0
 theme = ExtResource("4_wm4p5")
 text = "Sasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa s"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 56.0
+theme = ExtResource("4_wm4p5")
+text = "aslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslkaslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslkaslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslkaslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslkaslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslk"
