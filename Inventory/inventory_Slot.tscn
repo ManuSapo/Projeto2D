@@ -92,16 +92,6 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect"]
-visible = false
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 88.0
-offset_bottom = 56.0
-theme = ExtResource("4_wm4p5")
-text = "Sasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa s"
-
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 8.0
