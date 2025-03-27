@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://06fj61iwq131" path="res://Scripts/inventory_slot.gd" id="1_35fg5"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_n0421"]
 [ext_resource type="FontFile" uid="uid://51oq743yniu0" path="res://Assets Visuais/Fonts/ChicagoFLF.ttf" id="3_wut8a"]
-[ext_resource type="Theme" uid="uid://bh25p1autjn2m" path="res://Themes/inventory_Slot.tres" id="4_wm4p5"]
+[ext_resource type="Theme" uid="uid://dmkxnx3wg7ofq" path="res://Themes/inventory_Slot.res" id="4_wm4p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wut8a"]
 atlas = ExtResource("1_n0421")
@@ -94,13 +94,13 @@ patch_margin_bottom = 8
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = -8.0
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.125
+anchor_right = 0.917
+anchor_bottom = 0.875
+offset_left = 0.0319996
+offset_right = -0.0320053
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_wm4p5")
@@ -119,3 +119,13 @@ theme = ExtResource("4_wm4p5")
 text = "Hi im just testing the text because i really need to do it"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect"]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 56.0
+theme = ExtResource("4_wm4p5")
+text = "Sasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa sSasasas asasas sa sa sa vdsaaasassaasas sa sa s"
