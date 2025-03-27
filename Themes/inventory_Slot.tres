@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bh25p1autjn2m"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bh25p1autjn2m"]
 
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_5jy0x"]
 [ext_resource type="FontFile" uid="uid://qn0iv0rp48br" path="res://Assets Visuais/Fonts/monogram.ttf" id="2_0mx5u"]
@@ -44,13 +44,6 @@ region = Rect2(467, 515, 7, 32)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2p0sl"]
 texture = SubResource("AtlasTexture_x80ys")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_36nnc"]
-atlas = ExtResource("1_5jy0x")
-region = Rect2(578, 497, 9, 77)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ifc2m"]
-texture = SubResource("AtlasTexture_36nnc")
-
 [resource]
 default_base_scale = 2.0
 default_font = ExtResource("2_0mx5u")
@@ -77,5 +70,3 @@ RichTextLabel/styles/background = SubResource("StyleBoxTexture_wm4p5")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_x80ys")
 RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_wt8ad")
 RichTextLabel/styles/scroll = SubResource("StyleBoxTexture_2p0sl")
-VScrollBar/styles/scroll = SubResource("StyleBoxTexture_ifc2m")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxTexture_ifc2m")

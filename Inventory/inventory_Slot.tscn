@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqg63qolme1wi"]
+[gd_scene load_steps=7 format=3 uid="uid://bqg63qolme1wi"]
 
 [ext_resource type="Script" uid="uid://06fj61iwq131" path="res://Scripts/inventory_slot.gd" id="1_35fg5"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_n0421"]
 [ext_resource type="FontFile" uid="uid://51oq743yniu0" path="res://Assets Visuais/Fonts/ChicagoFLF.ttf" id="3_wut8a"]
-[ext_resource type="Theme" uid="uid://dmkxnx3wg7ofq" path="res://Themes/inventory_Slot.res" id="4_wm4p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wut8a"]
 atlas = ExtResource("1_n0421")
@@ -92,11 +91,10 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 88.0
+offset_right = 80.0
 offset_bottom = 56.0
-theme = ExtResource("4_wm4p5")
-text = "aslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslkaslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslkaslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslkaslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslkaslçdkasjadlsk ajskldjaklda jaskld jaksld jaskld jaskl djaskl djask ldjaslk"
+text = "assdahjasfdkhadfskj ashdkjlafsdhfas hsakjdfhsa kjlfhasd jklfash fjklsadhfkj lshlkjashfajklshf jksahjkl"
