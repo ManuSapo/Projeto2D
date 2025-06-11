@@ -1,0 +1,43 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://glruv4cv5c2b"]
+
+[ext_resource type="FontFile" uid="uid://qn0iv0rp48br" path="res://Assets Visuais/Fonts/monogram.ttf" id="1_l8qcx"]
+[ext_resource type="Texture2D" uid="uid://dts0lqpnxvl8w" path="res://Assets Visuais/UI/game ui 1-bit.png" id="2_3shpv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4b0xk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1fa7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kmue"]
+atlas = ExtResource("2_3shpv")
+region = Rect2(338, 785, 37, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fusxx"]
+texture = SubResource("AtlasTexture_4kmue")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erfrk"]
+atlas = ExtResource("2_3shpv")
+region = Rect2(338, 769, 37, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vfiny"]
+texture = SubResource("AtlasTexture_erfrk")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.187176, 0.187176, 0.187176, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 10
+Button/fonts/font = ExtResource("1_l8qcx")
+Button/styles/disabled = SubResource("StyleBoxEmpty_4b0xk")
+Button/styles/focus = SubResource("StyleBoxEmpty_a1fa7")
+Button/styles/hover = SubResource("StyleBoxTexture_fusxx")
+Button/styles/normal = SubResource("StyleBoxTexture_vfiny")
+Button/styles/pressed = SubResource("StyleBoxTexture_vfiny")

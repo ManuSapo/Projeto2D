@@ -7,6 +7,8 @@ extends Node
 
 var EName: String
 signal canEnd
+@warning_ignore("unused_signal")
+signal InvUseButton()
 
 func _ready():
 	pass

@@ -16,16 +16,18 @@ func _ready() -> void:
 	self.hide()
 	update()
 	inventory.updated.connect(update)
-	
+		
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	ShowOrHide()
 
 func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
-		slots[i].update(inventory.slots[i])
+		slots[i].update(inventory.slots[i].duplicate_slot())
 
-
+func update_single_slot(slot_index: int):
+	if slot_index < slots.size() and slot_index < inventory.slots.size():
+		slots[slot_index].update(inventory.slots[slot_index])
 
 func ShowOrHide():
 	if isShowing == true:
@@ -60,3 +62,11 @@ func ButtonShowHide():
 
 func _on_on_off_pressed():
 	ButtonShowHide()
+
+func use_item(slot: Inventory_Slot):
+	if slot.item and slot.amount > 0:
+		slot.item.use()
+		slot.amount -= 1
+		if slot.amount <= 0:
+			slot.item = null
+		inventory.updated.emit()

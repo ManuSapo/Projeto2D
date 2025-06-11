@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjvnc7lb23ktm"]
+
+[ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_dr5yd"]
+[ext_resource type="Script" uid="uid://fn7lmakqypnj" path="res://Scripts/DividedButtonsInv.gd" id="2_dc5bk"]
+[ext_resource type="PackedScene" uid="uid://ct8c721dpp7sb" path="res://Cenas/UI/Generic UI Button.tscn" id="2_ekxvd"]
+[ext_resource type="Theme" uid="uid://dmkxnx3wg7ofq" path="res://Themes/inventory_Slot.res" id="4_vfsj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p0sl"]
+atlas = ExtResource("1_dr5yd")
+region = Rect2(32, 608, 64, 64)
+
+[node name="NinePatchRect" type="NinePatchRect"]
+z_index = 1
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = -1
+anchor_right = 0.0555556
+anchor_bottom = 0.0987654
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_2p0sl")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+script = ExtResource("2_dc5bk")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(68, 44)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.03
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.92
+offset_right = 27.0
+offset_bottom = 27.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Use" parent="VBoxContainer" instance=ExtResource("2_ekxvd")]
+layout_mode = 2
+text = "Use"
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Delete" parent="VBoxContainer" instance=ExtResource("2_ekxvd")]
+layout_mode = 2
+text = "Delete"
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Read" parent="VBoxContainer" instance=ExtResource("2_ekxvd")]
+layout_mode = 2
+text = "Read"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 25.0
+offset_right = 109.0
+offset_bottom = 48.0
+theme = ExtResource("4_vfsj5")
+text = "mouse moving"
+
+[connection signal="mouse_entered" from="VBoxContainer/Use" to="." method="_on_use_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Use" to="." method="_on_use_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Use" to="." method="_on_use_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Delete" to="." method="_on_delete_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Delete" to="." method="_on_delete_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Delete" to="." method="_on_delete_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Read" to="." method="_on_read_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Read" to="." method="_on_read_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Read" to="." method="_on_read_pressed"]

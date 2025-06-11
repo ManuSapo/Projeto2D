@@ -699,7 +699,6 @@ layout_mode = 2
 skill = ExtResource("14_r8i4x")
 
 [node name="Skill3" parent="Camera2D/FightUI/LayoutUI/FightButtons/ScrollContainer/SkillsButtons" instance=ExtResource("12_2aa3t")]
-visible = false
 layout_mode = 2
 skill = SubResource("Resource_edgoi")
 

@@ -6,3 +6,13 @@ class_name Inventory_Item
 @export var shopDescription: String = "The shop description"
 @export var generalDescription: String = "The general description"
 @export var effectDescription: String = "The effect description"
+@export var price: int
+@export var heal: int
+@export var damage: int
+@export var item_type: ItemType = ItemType.DAMAGE
+
+enum ItemType { DAMAGE, HEAL, SELL, ARMOR, WEAPON, AMMO, OTHER }
+
+
+func use():
+	print("item used is ", self.name)
