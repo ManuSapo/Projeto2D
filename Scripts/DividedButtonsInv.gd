@@ -15,7 +15,7 @@ func _on_use_mouse_exited() -> void:
 
 
 func _on_use_pressed() -> void:
-	GameManager.InvUseButton.emit()
+	pass
 
 
 func _on_delete_mouse_entered() -> void:

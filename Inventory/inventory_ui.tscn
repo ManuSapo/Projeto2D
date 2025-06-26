@@ -1,14 +1,93 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmsoevvcxytju"]
+[gd_scene load_steps=27 format=3 uid="uid://cmsoevvcxytju"]
 
 [ext_resource type="Script" uid="uid://cykgvybpo1byx" path="res://Inventory/InventoryFunctions.gd" id="1_o6avf"]
 [ext_resource type="Resource" uid="uid://duig3x6i2cmqw" path="res://Inventory/Inventory Resources/PlayerInventory.tres" id="2_n0pvb"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="2_o6avf"]
 [ext_resource type="PackedScene" uid="uid://bqg63qolme1wi" path="res://Inventory/inventory_Slot.tscn" id="3_6gduq"]
 [ext_resource type="PackedScene" uid="uid://capcbb2jvtfq3" path="res://Cenas/UI/On_Off_Button.tscn" id="5_jhqvo"]
+[ext_resource type="Script" uid="uid://dakg462y4yqpl" path="res://Scripts/change_inv.gd" id="6_ju6sq"]
+[ext_resource type="FontFile" uid="uid://qn0iv0rp48br" path="res://Assets Visuais/Fonts/monogram.ttf" id="6_pphwo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0pvb"]
 atlas = ExtResource("2_o6avf")
 region = Rect2(32, 480, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhqvo"]
+atlas = ExtResource("2_o6avf")
+region = Rect2(481, 881, 40, 14)
+
+[sub_resource type="Theme" id="Theme_ju6sq"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/font_sizes/font_size = 13
+Label/fonts/font = ExtResource("6_pphwo")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jhqvo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inc1q"]
+atlas = ExtResource("2_o6avf")
+region = Rect2(192, 704, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s728e"]
+texture = SubResource("AtlasTexture_inc1q")
+modulate_color = Color(0.83, 0.83, 0.83, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pphwo"]
+atlas = ExtResource("2_o6avf")
+region = Rect2(192, 704, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ju6sq"]
+texture = SubResource("AtlasTexture_pphwo")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s728e"]
+atlas = ExtResource("2_o6avf")
+region = Rect2(272, 705, 16, 15)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vu0ua"]
+texture = SubResource("AtlasTexture_s728e")
+
+[sub_resource type="Theme" id="Theme_inc1q"]
+Button/font_sizes/font_size = 11
+Button/styles/focus = SubResource("StyleBoxEmpty_jhqvo")
+Button/styles/hover = SubResource("StyleBoxTexture_s728e")
+Button/styles/normal = SubResource("StyleBoxTexture_ju6sq")
+Button/styles/pressed = SubResource("StyleBoxTexture_vu0ua")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pphwo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu0ua"]
+atlas = ExtResource("2_o6avf")
+region = Rect2(160, 704, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xan3"]
+texture = SubResource("AtlasTexture_vu0ua")
+modulate_color = Color(0.831373, 0.831373, 0.831373, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju6sq"]
+atlas = ExtResource("2_o6avf")
+region = Rect2(160, 704, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inc1q"]
+texture = SubResource("AtlasTexture_ju6sq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jsir"]
+atlas = ExtResource("2_o6avf")
+region = Rect2(224, 705, 16, 15)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4hk6"]
+texture = SubResource("AtlasTexture_8jsir")
+
+[sub_resource type="Theme" id="Theme_s728e"]
+Button/styles/focus = SubResource("StyleBoxEmpty_pphwo")
+Button/styles/hover = SubResource("StyleBoxTexture_3xan3")
+Button/styles/normal = SubResource("StyleBoxTexture_inc1q")
+Button/styles/pressed = SubResource("StyleBoxTexture_r4hk6")
 
 [node name="InventoryUI" type="Control"]
 z_index = 1
@@ -125,7 +204,61 @@ offset_top = 148.0
 offset_right = 255.0
 offset_bottom = 164.0
 
+[node name="ChangeInv" type="Control" parent="border"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_ju6sq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="border/ChangeInv"]
+custom_minimum_size = Vector2(61, 16)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 148.0
+offset_right = 92.0
+offset_bottom = 164.0
+texture = SubResource("AtlasTexture_jhqvo")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="border/ChangeInv/NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 59.0
+offset_bottom = 14.0
+theme = SubResource("Theme_ju6sq")
+text = "All"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusOne" type="Button" parent="border/ChangeInv"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.4
+anchor_bottom = 0.6
+offset_left = 93.0
+offset_top = 148.0
+offset_right = 93.0
+offset_bottom = 140.0
+theme = SubResource("Theme_inc1q")
+
+[node name="MinusOne" type="Button" parent="border/ChangeInv"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.4
+anchor_bottom = 0.6
+offset_left = 14.0
+offset_top = 148.0
+offset_right = 14.0
+offset_bottom = 140.0
+theme = SubResource("Theme_s728e")
+
 [connection signal="pressed" from="border/OnOff" to="." method="_on_on_off_pressed"]
+[connection signal="pressed" from="border/ChangeInv/PlusOne" to="border/ChangeInv" method="_on_plus_one_pressed"]
+[connection signal="pressed" from="border/ChangeInv/MinusOne" to="border/ChangeInv" method="_on_minus_one_pressed"]
 
 [editable path="border/GridContainer/Panel"]
 [editable path="border/GridContainer/Panel/NinePatchRect"]

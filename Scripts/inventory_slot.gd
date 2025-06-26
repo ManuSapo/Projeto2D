@@ -60,11 +60,21 @@ func _on_close_button_pressed() -> void:
 		print(closeButton.visible)
 #endregion 
 
-
+@warning_ignore("unused_parameter")
+func backupdate(slot: Inventory_Slot):
+	if slot.item == slot_data.item:
+		slot.amount = slot_data.amount
+	pass
 
 func _on_use_pressed():
 	if slot_data and slot_data.item:
 		slot_data.item.use()
+		if slot_data.amount >= 1:
+			slot_data.amount -= 1
+			if slot_data.amount <= 0:
+				slot_data.amount = 0
+				slot_data.item = null
+		get_parent().get_parent().get_parent().update()
 
 
 func _on_delete_pressed() -> void:

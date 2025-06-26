@@ -10,9 +10,10 @@ class_name Inventory_Item
 @export var heal: int
 @export var damage: int
 @export var item_type: ItemType = ItemType.DAMAGE
+@export var tag: = tagInv.HEAL
 
 enum ItemType { DAMAGE, HEAL, SELL, ARMOR, WEAPON, AMMO, OTHER }
-
+enum tagInv { HEAL, LOOT, WEAPONS, RUNE, KEY}
 
 func use():
 	print("item used is ", self.name)

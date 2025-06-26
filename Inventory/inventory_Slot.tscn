@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://06fj61iwq131" path="res://Scripts/inventory_slot.gd" id="1_35fg5"]
 [ext_resource type="Texture2D" uid="uid://dj6nxpc7gn7ia" path="res://Assets Visuais/UI/game boy ui copiar.png" id="1_n0421"]
-[ext_resource type="FontFile" uid="uid://51oq743yniu0" path="res://Assets Visuais/Fonts/ChicagoFLF.ttf" id="3_wut8a"]
+[ext_resource type="FontFile" uid="uid://qn0iv0rp48br" path="res://Assets Visuais/Fonts/monogram.ttf" id="3_wm4p5"]
 [ext_resource type="PackedScene" uid="uid://bjvnc7lb23ktm" path="res://Cenas/UI/DividedButtonsInv.tscn" id="4_wm4p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wut8a"]
@@ -79,15 +79,16 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.995
+offset_top = -1.0
 offset_right = 16.0
-offset_bottom = 10.05
+offset_bottom = 9.04
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.503219, 0.497649)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_wut8a")
-theme_override_font_sizes/font_size = 0
+theme_override_fonts/font = ExtResource("3_wm4p5")
+theme_override_font_sizes/font_size = 20
 text = "0"
 horizontal_alignment = 1
 
@@ -112,6 +113,9 @@ offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
 offset_bottom = 32.0
+
+[node name="Label" parent="NinePatchRect" index="1"]
+visible = false
 
 [connection signal="pressed" from="close button" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
