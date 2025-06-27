@@ -18,6 +18,7 @@ func insert(item: Inventory_Item):
 		if slot.item == item:
 			slot.amount += 1
 			updated.emit()
+			insertOnOther(item)
 			return
 	
 	for i in range(slots.size()):
@@ -25,36 +26,10 @@ func insert(item: Inventory_Item):
 			slots[i].item = item
 			slots[i].amount = 1
 			updated.emit()
+			insertOnOther(item)
 			return
-			
-	if item.tag == 1:
-		for slot in heal:
-			if slot.item == item:
-				slot.amount +=1
-				updated.emit()
-				return
-		for i in range(heal.size()):
-			if !heal[i].item:
-				heal[i].item = item
-				heal[i].amount = 1
-				updated.emit()
-				return
-				
-	if item.tag == 2:
-		for slot in loot:
-			if slot.item == item:
-				slot.amount +=1
-				updated.emit()
-				return
-		for i in range(loot.size()):
-			if !loot[i].item:
-				loot[i].item = item
-				loot[i].amount = 1
-				updated.emit()
-				return
-				
 
-
+#region other things
 func takeout(item: Inventory_Item):
 	for slot in slots:
 		if slot.item == item:
@@ -66,8 +41,6 @@ func takeout(item: Inventory_Item):
 			updated.emit()
 			print(slot.amount)
 			return
-
-
 func takeamount(item: Inventory_Item, quantity: int):
 	for slot in slots:
 		if slot.item == item:
@@ -77,7 +50,6 @@ func takeamount(item: Inventory_Item, quantity: int):
 					slot.item = null
 					slot.amount = 0
 					updated.emit()
-
 func insertamount(item: Inventory_Item, quantity: int):
 	for slot in slots:
 		if slot.item == item:
@@ -91,5 +63,35 @@ func insertamount(item: Inventory_Item, quantity: int):
 			slot.amount = quantity
 			updated.emit()
 			return
+#endregion
 
+func insertOnOther(invItem: Inventory_Item):
+	if invItem.tag == 0:
+		print(invItem.name)
+		for slot in heal:
+			if slot.item == invItem:
+				slot.amount +=1
+				updated.emit()
+				return
+		for i in range(heal.size()):
+			if !heal[i].item:
+				heal[i].item = invItem
+				heal[i].amount = 1
+				updated.emit()
+				return
+	if invItem.tag == 1:
+		print(invItem.name)
+		for slot in loot:
+			if slot.item == invItem:
+				slot.amount +=1
+				updated.emit()
+				print(slot.item.name)
+				return
+		for i in range(loot.size()):
+			if !loot[i].item:
+				loot[i].item = invItem
+				loot[i].amount = 1
+				updated.emit()
+				print(loot[i].item.name)
+				return
  

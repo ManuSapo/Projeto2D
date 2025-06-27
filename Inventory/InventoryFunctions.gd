@@ -22,13 +22,29 @@ func _ready() -> void:
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	ShowOrHide()
-	if change.number == 0:
-		pass
 
 func update():
-	for i in range(min(inventory.slots.size(), slots.size())):
-		slots[i].update(inventory.slots[i])
+	changeInv()
 
+func changeInv():
+	if change.number == 0:
+		for i in range(min(inventory.slots.size(), slots.size())):
+			slots[i].update(inventory.slots[i])
+	if change.number == 1:
+		for i in range(min(inventory.heal.size(), slots.size())):
+			slots[i].update(inventory.heal[i])
+	if change.number == 2:
+		for i in range(min(inventory.loot.size(), slots.size())):
+			slots[i].update(inventory.loot[i])
+	if change.number == 3:
+		for i in range(min(inventory.weapons.size(), slots.size())):
+			slots[i].update(inventory.weapons[i])
+	if change.number == 4:
+		for i in range(min(inventory.runes.size(), slots.size())):
+			slots[i].update(inventory.runes[i])
+	if change.number == 5:
+		for i in range(min(inventory.key.size(), slots.size())):
+			slots[i].update(inventory.key[i])
 
 func ShowOrHide():
 	if isShowing == true:

@@ -1,7 +1,9 @@
 extends Control
 
+@onready var UI = $"../.."
 @onready var label = $NinePatchRect/Label
 @export var number: int = 0
+
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
@@ -24,6 +26,8 @@ func _process(delta: float) -> void:
 
 func _on_plus_one_pressed() -> void:
 	number = number+1
+	UI.changeInv()
 
 func _on_minus_one_pressed() -> void:
 	number = number-1
+	UI.changeInv()
