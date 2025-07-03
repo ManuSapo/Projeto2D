@@ -5,11 +5,13 @@ extends Panel
 @onready var itemAmount: Label = $TextureRect/Label
 @onready var textDisplay = $NinePatchRect
 @onready var closeButton = $"close button"
+@onready var inventoryHere = GameManager.inventoryUniversal.inventoryResource.heal
 var slot_data: Inventory_Slot
 
 var isShowing: bool = false
 var isItem: bool = false
-
+@warning_ignore("unused_signal")
+signal used(item: Inventory_Item)
 
 func _ready() -> void:
 	GameManager.InvUseButton.connect(_on_use_pressed)
@@ -75,10 +77,11 @@ func _on_use_pressed():
 				slot_data.amount = 0
 				slot_data.item = null
 		get_parent().get_parent().get_parent().update()
+		get_parent().get_parent().get_parent().usedOnChanges(slot_data)
 
 
 func _on_delete_pressed() -> void:
-	pass # Replace with function body.
+	pass # Replace with function body.p
 
 
 func _on_read_pressed() -> void:

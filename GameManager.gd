@@ -2,8 +2,10 @@ extends Node
 
 @onready var player = get_node("/root/Geral/Personagem")
 @onready var enemies = get_node("/root/Geral/Enemies")
+@onready var inventoryUniversal = get_node("/root/Geral/Personagem/InventoryUI")
 @export var isFighting: bool = false
 @export var difficulty: String = "easy" # Opções: "easy", "medium", "hard"
+
 
 var EName: String
 signal canEnd

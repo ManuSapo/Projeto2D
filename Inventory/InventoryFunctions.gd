@@ -6,7 +6,6 @@ signal opened
 signal closed
 
 @export var inventoryResource: Inventory = Inventory.new()
-
 @onready var slots: Array = $border/GridContainer.get_children()
 @onready var inventory = inventoryResource
 @onready var change = $border/ChangeInv
@@ -18,7 +17,6 @@ func _ready() -> void:
 	self.hide()
 	update()
 	inventory.updated.connect(update)
-	
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	ShowOrHide()
@@ -32,7 +30,7 @@ func changeInv():
 			slots[i].update(inventory.slots[i])
 	if change.number == 1:
 		for i in range(min(inventory.heal.size(), slots.size())):
-			slots[i].update(inventory.heal[i])
+			slots[i].update(inventory.heal[i]) 
 	if change.number == 2:
 		for i in range(min(inventory.loot.size(), slots.size())):
 			slots[i].update(inventory.loot[i])
@@ -45,6 +43,16 @@ func changeInv():
 	if change.number == 5:
 		for i in range(min(inventory.key.size(), slots.size())):
 			slots[i].update(inventory.key[i])
+
+func usedOnChanges(slotU: Inventory_Slot):
+	if slotU.item != null:
+		for i in range(inventory.heal.size()):
+			var heal_slot = inventory.heal[i]
+			if heal_slot != null and heal_slot.item == slotU.item:
+				heal_slot.amount = slotU.amount
+				if heal_slot.amount <= 0:
+					heal_slot.item = null
+					inventory.heal[i] = heal_slot
 
 func ShowOrHide():
 	if isShowing == true:
